@@ -5,24 +5,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
-const updateRule = require('postcss-sprites/lib/core').updateRule;
-const postcss = require('postcss');
+const SpritesmithPlugin = require('webpack-spritesmith');
+
 const isProd = process.env.NODE_ENV === 'production';
-const now = new Date();
 
 const src = path.resolve(__dirname, 'src');
 const pages = path.resolve(src, 'pages');
 const dist = path.resolve(__dirname, 'dist');
-
-const customPlugin = () => ( css, result ) => {
-  result.messages.push({
-    type:    "asset",
-    file:    "sprite.svg",
-    content: "<svg>...</svg>",
-  });
-};
-
-const postcssPlugin = postcss.plugin("postcss-assets", customPlugin);
 
 module.exports = {
   mode:    isProd ? 'production' : 'development',
@@ -74,10 +63,10 @@ module.exports = {
         use:  [
           isProd ? MiniCssExtractPlugin.loader : 'style-loader',
           {
-            loader:  "css-loader",
-            options: {
-              url: ( url ) => url.includes("sprite.png") ? false : true,
-            },
+            loader: "css-loader",
+            // options: {
+            //   url: ( url ) => url.includes("sprite.png") ? false : true,
+            // },
           },
           {
             loader:  'postcss-loader',
@@ -85,27 +74,6 @@ module.exports = {
               postcssOptions: {
                 plugins: [
                   "postcss-preset-env",
-                  require('postcss-sprites')({
-                    stylesheetPath: dist,
-                    spritePath:     path.resolve(dist, 'img'),
-                    //   groupBy:        function ( info ) {
-                    //     return Promise.resolve(path.parse(info.styleFilePath).name);
-                    //   },
-                    filterBy:       ( info ) => new Promise(( resolve, reject ) => {
-                      info.url.endsWith('.sprite.png') ? resolve(info.path) : reject();
-                    }),
-                    hooks:          {
-                      onSaveSpritesheet: ( opts, spritesheet ) => Promise.resolve(path.join(opts.spritePath, `sprite.png`)),
-                      onUpdateRule:      ( rule, token, image ) => {
-                        image.spriteUrl += '?' + +now;
-                        updateRule(rule, token, image);
-                        ['width', 'height'].forEach(( prop ) => rule.insertAfter(rule.last, postcss.decl({
-                          prop:  prop,
-                          value: image.coords[prop] + 'px',
-                        })));
-                      },
-                    },
-                  }),
                 ],
               },
             },
@@ -113,7 +81,7 @@ module.exports = {
           {
             loader:  "sass-loader",
             options: {
-              additionalData: `@import "./style/_vars.scss"; @import "./style/_mixins.scss";`,
+              additionalData: `@import "./style/_vars.scss"; @import "./style/_mixins.scss"; @import "./spritesmith-generated/sprite.scss";`,
               sassOptions:    {
                 includePaths: [path.resolve(src)],
               },
@@ -135,11 +103,23 @@ module.exports = {
       },
       {
         test:    /\.(png|jpe?g|gif|svg)$/i,
-        exclude: /\.sprite\.svg$/,
+        exclude: [/\.sprite\.svg$/, /sprite\.png$/],
         use:     [{
           loader:  'file-loader',
           options: {
             name:       ( resourcePath, resourceQuery ) => path.relative(src, resourcePath).replace(/\//g, '_'),
+            esModule:   false,
+            outputPath: 'img',
+          },
+        }],
+      },
+      {
+        test:    /\.(png)$/i,
+        include: [/sprite\.png$/],
+        use:     [{
+          loader:  'file-loader',
+          options: {
+            name:       'sprite.png',
             esModule:   false,
             outputPath: 'img',
           },
@@ -164,6 +144,19 @@ module.exports = {
     new MiniCssExtractPlugin({ filename: 'style.css' }),
     new SpriteLoaderPlugin({
       // plainSprite: true,
+    }),
+    new SpritesmithPlugin({
+      src:        {
+        cwd:  path.resolve(__dirname, 'src/img/sprites'),
+        glob: '*.png',
+      },
+      target:     {
+        image: path.resolve(__dirname, 'src/spritesmith-generated/sprite.png'),
+        css:   path.resolve(__dirname, 'src/spritesmith-generated/sprite.scss'),
+      },
+      apiOptions: {
+        cssImageRef: "src/spritesmith-generated/sprite.png",
+      },
     }),
     ...fs.readdirSync(pages)
       .filter(fileName => fileName.endsWith('.pug'))
@@ -192,8 +185,8 @@ module.exports = {
   } : undefined,
 
   devServer: {
-    host: '0.0.0.0',
-    port: 8081,
+    host:        '0.0.0.0',
+    port:        8081,
     contentBase: dist, // для раздачи png спрайта
   },
 

@@ -58,7 +58,7 @@
     &:before {
       content: '';
       display: block;
-      background-image: url(./img/search.sprite.png);
+      @include sprite($search);
     }
   }
 

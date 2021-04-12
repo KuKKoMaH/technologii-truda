@@ -28,11 +28,9 @@
 
     &:after {
       opacity: 0;
-      background: url(../../img/check.sprite.svg);
-      width: 18px;
-      height: 13px;
       left: 4px;
       top: 1px;
+      @include sprite($check);
       @include anim();
     }
   }
