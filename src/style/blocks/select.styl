@@ -1,0 +1,153 @@
+.select
+  position: relative;
+
+  &.selectize-control
+    position: relative;
+
+    &.wpcf7-not-valid
+      .selectize-input
+        border-color: red
+
+  &:hover
+    .selectize-input
+      border: 4px solid #e8e7e7
+      padding: 0 21px
+
+      &:before
+        right: 20px
+
+  .selectize-input
+    height: 80px
+    font-size: 23px
+    font-weight: bold;
+    border: 0px solid #f6f6f6
+    padding: 0 25px
+    background: #f6f6f6
+    position: relative
+    white-space: nowrap
+    display: flex;
+    align-items center
+    anim()
+    //+media('md')
+    //  height: 60px
+    //  font-size: 8px
+    //  padding: 0 40px 0 18px
+
+    &:before
+      content: ''
+      display: block
+      position: absolute
+      right: 24px;
+      margin-top: -4px;
+      top: 50%
+      border-top: 8px solid $black
+      border-left: 8px solid transparent
+      border-right: 8px solid transparent
+      anim()
+
+    &.dropdown-active
+      border: 4px solid #ec3434
+      padding: 0 21px
+
+      &:before
+        transform rotate(180deg)
+        right: 20px
+
+    &.disabled
+      background-color: #dfdfdf
+
+    .item
+      vertical-align: top
+      display: inline-block
+      overflow: hidden
+      white-space: nowrap
+      text-overflow: ellipsis
+      max-width: 100%
+
+    input
+      font-size: 1em
+      display: inline-block
+      vertical-align: top
+      padding: 0
+      min-height: 0
+      max-height: none
+      max-width: 100%
+      margin: 0 2px 0 0
+      text-indent: 0
+      border: 0 none
+      background: none
+      line-height: inherit
+      -webkit-user-select: auto
+      -webkit-box-shadow: none
+      box-shadow: none
+
+  &.selectize-dropdown, & .selectize-dropdown
+    position: absolute
+    overflow: auto;
+    margin-top: -4px
+    z-index: 10
+    background: #f6f6f6
+    //min-width: 100%;
+    border: 4px solid #ec3434
+    border-top: 0
+    box-shadow 0 9px 24px rgba($black, .15)
+
+  & .selectize-dropdown-content, &.selectize-dropdown-content
+    max-height 220px
+    //padding: 20px 0
+    height: 100%
+    width: 100%
+
+  & .option, &.option
+    margin-right: 31px
+    margin-bottom: 10px
+    padding: 6px 24px 5px
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    cursor: pointer
+    font-size: 23px
+    font-weight: bold;
+
+    //border-bottom: 1px solid #d5d5d8
+    anim()
+
+    &:last-child
+      margin-bottom: 0
+
+    &.active
+      //background-color: #dfb47a
+      color: #ec3434
+
+  &--green
+    & .selectize-input
+      border: 2px solid #70cb4c;
+      padding: 0 23px
+      height: 60px
+      font-size: 18px
+      +media('md')
+        height: 50px
+        padding: 0 18px
+
+      &.dropdown-active
+        border-color #70cb4c;
+
+      &:before
+        right: 22px
+
+    & .item
+      +media('md')
+        font-size: 14px
+
+    &:hover
+      .selectize-input
+        border-color #70cb4c;
+
+    & .selectize-dropdown, &.selectize-dropdown
+      border-color #70cb4c;
+
+    &.option, & .option
+      font-size: 18px
+      +media('md')
+        font-size: 14px
+        padding-left: 20px

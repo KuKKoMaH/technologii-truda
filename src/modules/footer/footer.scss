@@ -1,0 +1,154 @@
+.footer {
+  $this: &;
+
+  color: $white;
+  background: #1a1a1a;
+
+  &__top {
+    padding: 60px 0;
+
+    #{$this}__row {
+      justify-content: space-between;
+    }
+  }
+
+  &__bottom {
+    background: $black;
+
+    #{$this}__row {
+      height: 65px;
+      align-items: center;
+    }
+  }
+
+  &__row {
+    display: flex;
+  }
+
+  &__logo {
+    margin-bottom: 50px;
+  }
+
+  &__address {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+
+  &__work {
+    font-size: 18px;
+  }
+
+  &__workLabel {
+    font-size: 14px;
+    color: $dark-grey;
+  }
+
+  &__menu {
+    flex-shrink: 0;
+    margin: 0 30px;
+
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      list-style: none;
+      margin: 0 0 35px;
+      padding: 0;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      font-size: 18px;
+      color: $white;
+      @include anim();
+
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+
+  &__submenu {
+    width: 230px;
+    flex-shrink: 0;
+    margin: 0 30px;
+
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      list-style: none;
+      margin: 0 0 30px;
+      padding: 0;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      font-size: 18px;
+      color: $dark-grey;
+      @include anim();
+
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+
+  &__aside {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  &__phone {
+    color: $blue;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  &__email {
+    font-size: 18px;
+    color: $white;
+  }
+
+  &__contact {
+    margin-top: auto;
+  }
+  &__contactLabel {
+    position: relative;
+    padding-left: 30px;
+    font-size: 14px;
+    margin-bottom: 15px;
+
+    svg {
+      position: absolute;
+      color: $blue;
+      transform: rotate(90deg);
+      width: 14px;
+      height: 14px;
+      top: 8px;
+      left: 6px;
+    }
+  }
+
+  &__copyright {
+    color: $grey;
+  }
+
+
+  &__socials {
+    margin-left: auto;
+  }
+}

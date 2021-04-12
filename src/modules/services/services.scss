@@ -1,0 +1,129 @@
+.services{
+  $this: &;
+
+  margin: 120px 0;
+
+  &__row {
+    display: flex;
+    margin-top: 30px;
+  }
+
+  &__main {
+    width: 750px;
+  }
+
+  &__aside {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+  }
+
+  &__item {
+    width: 50%;
+    padding: 15px;
+  }
+
+  &__card {
+    position: relative;
+    display: block;
+    height: 100%;
+    background: $black 50% 50%;
+    background-size: cover;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: $white;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: $black;
+      opacity: .6;
+      @include anim();
+    }
+
+    &:hover {
+      color: $white;
+
+      &:before {
+        background: $blue;
+        opacity: .7;
+      }
+
+      #{$this}__content {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+      }
+      #{$this}__header {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+      }
+    }
+  }
+
+  &__content {
+    opacity: 0;
+    visibility: hidden;
+    position: relative;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    @include anim();
+    transform: translateY(20px);
+  }
+
+  &__header {
+    position: absolute;
+    padding: 25px;
+    bottom: 0;
+    left: 0;
+    font-weight: 600;
+    font-size: 22px;
+    @include anim();
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    font-size: 12px;
+  }
+
+  &__sub {
+    margin-top: auto;
+    padding-top: 15px;
+    font-size: 14px;
+  }
+
+  &__bullet {
+    border-bottom: 1px solid #C4C4C4;
+    padding-bottom: 5px;
+    margin-bottom: 40px;
+    text-align: right;
+  }
+
+  &__number {
+    font-size: 50px;
+    color: $blue;
+  }
+
+  &__more {
+    text-align: right;
+    margin-top: auto;
+  }
+}

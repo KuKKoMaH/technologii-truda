@@ -1,0 +1,39 @@
+.head {
+  position: relative;
+  height: 540px;
+  background: $black;
+  background-size: cover;
+  background-position: 50% 50%;
+  display: flex;
+  //align-items: center;
+  align-items: center;
+
+  &:before {
+    content: '';
+    position: absolute;
+    background: $black;
+    opacity: .7;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    color: $white;
+  }
+
+  &__text {
+    color: $grey;
+    max-width: 780px;
+    margin-top: 30px;
+    font-weight: 500;
+  }
+
+  &__form {
+    margin-top: 30px;
+  }
+}

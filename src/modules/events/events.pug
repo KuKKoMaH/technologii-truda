@@ -1,0 +1,38 @@
+.events.block
+  .c
+    .events__top
+      h2 СЕМИНАРЫ И ВЕБИНАРЫ
+      .events__button
+        a.btn.btn--outline(href='#')
+          | Смотреть все
+          +the_svg(require('src/img/arrow.sprite.svg'))(class="btn__icon")
+
+    .events__slider
+      .events__container
+        .events__items
+          each i in [1,2,3,4,5,6,7]
+            .events__item
+              .events__card
+                .events__img(style='background-image: url(' + require('src/modules/events/img/img.jpg') + ')')
+                  .events__label Вебинар
+                  .events__date
+                    .events__day 26
+                    |октября
+                .events__content
+                  .events__title Название мероприятия
+                  .events__bullets
+                    .events__bullet
+                      +the_svg(require('src/img/clock.sprite.svg'))
+                      |11.00 (мск)
+                    .events__bullet
+                      +the_svg(require('src/img/rub.sprite.svg'))
+                      |Бесплатно
+                  .events__text Когда человек сознательно или интуитивно выбирает себе в жизни какую-то цель, жизненную задачу, он невольно дает себе оценку.
+                  .events__footer
+                    a.events__more(href='#')
+                      | Подробнее
+                      +the_svg(require('src/img/arrow.sprite.svg'))(class=".events__arrow")
+
+      .nav.nav--center
+        button.nav__item.nav__item--prev: +the_svg(require('src/img/arrow.sprite.svg'))
+        button.nav__item.nav__item--next: +the_svg(require('src/img/arrow.sprite.svg'))

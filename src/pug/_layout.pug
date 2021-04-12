@@ -1,0 +1,29 @@
+include _mixins
+
+block html
+doctype html
+html
+  head
+    title ФГБУЗ МСЧ №59 ФМБА России
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(http-equiv="content-type" content="text/html; charset=utf-8")
+    meta#viewport(name="viewport" content="width=device-width, user-scalable=no")
+    block style
+    //link(rel="stylesheet" media="all" href="style.css")
+    //link(rel="shortcut icon" href="/favicon.ico")
+
+  body(onunload="")
+    include ../modules/header/header
+    block body
+    include ../modules/footer/footer
+    .hidden
+      //include ../modules/photoswipe/photoswipe
+      //include ../modules/popup/popup-thank
+      //include ../modules/popup/popup-callback
+      //include ../modules/popup/popup-akcii
+    //  include ../modules/popup/popup-partnership
+    //  include ../modules/popup/popup-abandon1
+    //  include ../modules/popup/popup-abandon2
+    //  include ../modules/popup/popup-abandon3
+    //  include ../modules/popup/popup-testPopup
+    //  include ../modules/popup/popup-casePopup

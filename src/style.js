@@ -1,0 +1,21 @@
+import "destyle.css/destyle.css";
+import "./style/fonts.scss";
+import "./style/common.scss";
+import "./style/typography.scss";
+import "./style/blocks/btn.scss";
+import "./style/blocks/checkbox.scss";
+import "./style/blocks/nav.scss";
+import "./style/blocks/input.scss";
+
+import './modules/header/header.scss';
+import './modules/head/head.scss';
+import './modules/lineForm/lineForm.scss';
+import './modules/services/services.scss';
+import './modules/clients/clients.scss';
+import './modules/about/about.scss';
+import './modules/testimonials/testimonials.scss';
+import './modules/banner/banner.scss';
+import './modules/events/events.scss';
+import './modules/news/news.scss';
+import './modules/subscribe/subscribe.scss';
+import './modules/footer/footer.scss';

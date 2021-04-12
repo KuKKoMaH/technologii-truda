@@ -1,0 +1,38 @@
+.subscribe {
+  &__row {
+    display: flex;
+    align-items: center;
+  }
+
+  &__content {
+    max-width: 670px;
+    font-size: 22px;
+  }
+
+  &__form {
+    width: 360px;
+    margin-left: auto;
+  }
+
+  &__input {
+    margin-bottom: 20px;
+    //height: 100%;
+
+    input {
+      display: block;
+      height: 100%;
+      width: 100%;
+      border: 1px solid $grey;
+      border-radius: 5px;
+      font-size: 14px;
+      padding: 15px 20px;
+      //@include placeholder($white);
+    }
+  }
+
+  &__confirm {
+    align-self: center;
+    margin-right: 20px;
+  }
+
+}

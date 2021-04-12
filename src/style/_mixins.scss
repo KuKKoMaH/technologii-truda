@@ -1,0 +1,45 @@
+@mixin cf() {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin anim($duration: .1s) {
+  transition: all $duration ease-in;
+}
+
+@mixin media-max-width($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin media($condition) {
+  @if ($condition == 'lg') {
+    @media screen and (max-width: $breakpoint-lg - 1) {
+      @content;
+    }
+  }
+  @if ($condition == 'md') {
+    @media screen and (max-width: $breakpoint-md - 1) {
+      @content;
+    }
+  }
+}
+
+@mixin placeholder($color) {
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+  &::-moz-placeholder {
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  &:-moz-placeholder {
+    color: $color;
+  }
+}

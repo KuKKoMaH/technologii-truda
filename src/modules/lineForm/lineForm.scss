@@ -1,0 +1,26 @@
+.lineForm {
+  display: flex;
+  align-items: stretch;
+
+  &__input {
+    flex: 1;
+    margin-right: 20px;
+    //height: 100%;
+
+    input {
+      display: block;
+      height: 100%;
+      width: 100%;
+      border: 1px solid $white;
+      border-radius: 5px;
+      font-size: 14px;
+      padding: 10px;
+      //@include placeholder($white);
+    }
+  }
+
+  &__confirm {
+    align-self: center;
+    margin-right: 20px;
+  }
+}

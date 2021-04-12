@@ -1,0 +1,106 @@
+.header {
+  &__top {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+  }
+
+  &__top &__row {
+    height: 40px;
+  }
+
+  &__bottom &__row {
+    height: 65px;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+  }
+
+  &__topMenu {
+    margin-right: auto;
+
+    ul {
+      font-size: 10px;
+      display: flex;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      margin: 0 14px 0 0;
+      list-style: none;
+    }
+  }
+
+  &__works {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__sep {
+    background: $blue;
+    width: 1px;
+    height: 10px;
+    margin: 0 15px;
+  }
+
+  &__phone {
+    font-weight: 600;
+    color: $blue;
+    margin-left: 60px;
+  }
+
+  &__search {
+    margin-left: 30px;
+
+    &:before {
+      content: '';
+      display: block;
+      background-image: url(./img/search.sprite.png);
+    }
+  }
+
+  &__logo {
+    display: block;
+    height: auto;
+    flex-shrink: 0;
+  }
+
+  &__menu {
+    flex: 1;
+
+    ul {
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      margin: 0 10px 0;
+      list-style: none;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__hamburger {
+    margin-left: 30px;
+  }
+
+  &__hamburgerIcon {
+    width: 19px;
+    height: 19px;
+  }
+}

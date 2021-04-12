@@ -1,0 +1,53 @@
+.wpcf7-checkbox .wpcf7-list-item, .checkbox {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  padding-left: 35px;
+
+  input {
+    display: none
+  }
+
+  span {
+    display: block;
+    font-size: 10px;
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+    }
+
+    &:before {
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #EEEEEE;
+    }
+
+    &:after {
+      opacity: 0;
+      background: url(../../img/check.sprite.svg);
+      width: 18px;
+      height: 13px;
+      left: 4px;
+      top: 1px;
+      @include anim();
+    }
+  }
+
+  a {
+    color: $orange;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  input:checked ~ span {
+    &:after {
+      opacity: 1;
+    }
+  }
+}

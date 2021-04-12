@@ -1,0 +1,183 @@
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6
+  letter-spacing 0
+  //margin: .75em
+  line-height: 1.25
+  font-weight: bold;
+
+h1, .h1
+  font-size: 60px
+  line-height: 1.2
+  +media('md')
+    font-size: 32px
+    line-height: 1.25
+
+h2, .h2
+  font-size: 44px
+  +media('md')
+    font-size: 22px
+    line-height: 1.47
+
+h3, .h3
+  font-size: 31px
+  +media('md')
+    font-size: 22px
+
+h4, .h4
+  font-size: 27px
+  +media('md')
+    font-size: 22px
+
+h5, .h5
+  font-size: 23px
+  +media('md')
+    font-size: 22px
+
+h6, .h6
+  font-size: 18px
+  margin-bottom: .85em
+  letter-spacing .025em
+  +media('md')
+    font-size: 16px
+    line-height: 1.5;
+    margin-bottom: .5em
+
+b, strong
+  font-weight: 600
+
+p
+  margin-bottom: .7em
+  +media('md')
+    margin-bottom: .8em
+
+a
+  color: $black
+  //color: inherit
+  //color: $brown2
+  //border-bottom: 1px solid transparent
+  //padding-bottom: 2px
+  text-decoration: underline;
+  anim()
+
+  &:hover
+    text-decoration: none;
+
+//border-color: $brown2
+
+//&:hover
+//  border-color: #e7533b
+
+ul, ol
+  margin-bottom: 1.55em
+  line-height: 1.5
+
+  li
+    margin-bottom: 1.2em
+    position relative
+    +media('md')
+      margin-bottom: .75em
+
+ul
+  list-style disc
+  padding-left: 1.55em
+
+ol
+  counter-reset: list;
+  list-style: decimal
+  padding-left: 1.55em
+
+del, s
+  text-decoration: line-through
+
+blockquote
+  background: #1a1616;
+  color: #fff;
+  font-size: 23px;
+  line-height: 1.45;
+  font-weight: 700;
+  padding: 7% 10.5% 3%
+  position: relative;
+  z-index: 1;
+  max-width: 780px;
+  +media('md')
+    font-size: 16px;
+    line-height: 1.5;
+
+.wp-block-image
+  margin-bottom: 3rem
+  @media screen and (max-width: $breakpoint-lg - 1)
+    margin-bottom: 3.5rem
+
+  img
+    max-width 100%
+    height: auto;
+    display: block;
+
+  figcaption
+    margin: 10px 0 0
+    font-size: .85rem
+
+.wp-block-gallery
+  & li
+    &:before
+      display: none;
+
+.has-small-font-size
+  font-size: 1rem
+
+table
+  width: 100%
+  border-collapse collapse
+
+hr
+  border-color: #e8e7e6;
+  margin: 60px 0 50px;
+  +media('md')
+    margin: 30px
+
+.title
+  visibility: hidden;
+  margin-left: -7vw
+  color: #ec3434;
+  //font-size: 220px;
+  font-size: 11vw;
+  line-height: .82
+  font-weight: normal;
+  z-index: 2;
+  margin-top: -4vw
+  margin-bottom: 80px
+  //max-width calc(50% + 7vw - 50px)
+  //hyphens: auto;
+  overflow-wrap: break-word;
+
+  &--small
+    font-size: 9vw
+    //margin-top: -60px
+    +media('md')
+      font-size: 55px
+
+  +media-max-width(1750px)
+    margin-left: 0
+    //margin-top: -60px
+    font-size: 10vw
+  //max-width calc(50% - 50px)
+
+  +media('md')
+    margin-top: -20px
+    //margin-top: -150px
+    margin-bottom: 50px
+    font-size: 75px
+    max-width 100%
+
+  span
+    position: relative;
+
+    &:after
+      content: ''
+      position: absolute;
+      background: #ec3434;
+      width: 73%;
+      height: 37%;
+      bottom: 22%;
+      left: 14%;
+      border-radius: 50%

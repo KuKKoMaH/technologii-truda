@@ -1,0 +1,18 @@
+.clients.block
+  .c
+    .clients__row
+      .clients__left
+        h2 НАМ ДОВЕРЯЮТ
+        .clients__bullet
+          .clients__number 500+
+          | клиентов
+        .clients__text Когда человек сознательно или интуитивно выбирает себе в жизни какую-то цель, жизненную задачу, он невольно дает себе
+      .clients__right
+        .clients__container
+          .clients__items
+            each i in [1,2,3,4,5,6,7]
+              .clients__item
+                =i
+                img(src=require('src/modules/clients/img/logo.png'))
+
+
