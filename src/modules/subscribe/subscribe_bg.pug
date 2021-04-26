@@ -1,0 +1,16 @@
+.subscribe.subscribe--bg.fullWidth(style='background-image: url(' + require('src/modules/subscribe/img/bg.jpg') + ')')
+  .c
+    .subscribe__row
+      .subscribe__content.content.content--white
+        h2 ПОДПИШИТЕСЬ НА НОВОСТИ
+        h4 Будьте в курсе всех последних изменений в отрасли
+        p Подпишитесь на нашу новостную рассылку и будьте в курсе всех изменений
+      .subscribe__form
+        .subscribe__input: input(placeholder='ФИО')
+        .subscribe__input: input(placeholder='E-mail')
+        .subscribe__input
+          label.checkbox
+            input(type='checkbox')
+            span Согласен(а) наобработку моих#[br]#[a(href='#') персональных данных]
+        .subscribe__button
+          button.btn.btn--block Оставить заявку

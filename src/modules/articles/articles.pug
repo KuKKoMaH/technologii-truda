@@ -1,0 +1,21 @@
+.articles
+  .articles__items
+    each i in [1,2,3,4,5]
+      .articles__item
+        .articles__card
+          .articles__head
+            .articles__tags
+              .articles__tag Охрана труда
+            a.articles__copy(href='#')
+              +the_svg(require('src/img/copy.sprite.svg'))
+          .articles__title Как ГИТ Будет проверять работодателей в 2021 г?
+          .articles__text.content
+            p ООО «ЭАЦ Технологии труда» на рынке оказания услуг по охране труда с 2006 года.
+            p реализовали ряд крупных проектов федерального уровня и тысячи локальных внедрили новые технологии управления охраной и безопасностью труда на предприятиях наших Заказчиков
+
+          .articles__footer
+            .articles__date 23.03.2021
+            .articles__more
+              a(href='#') Подробнее >
+
+  include ../pagination/pagination

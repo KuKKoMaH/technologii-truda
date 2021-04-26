@@ -16,6 +16,7 @@ html {
 body {
   overflow-x: hidden;
   overflow-y: auto;
+  width: 100%;
 }
 
 html, body {
@@ -35,6 +36,8 @@ html, body {
   margin-right: auto;
   max-width: $container-lg;
   width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
   @include media('lg') {
     max-width: $container-md;
   }
@@ -74,18 +77,71 @@ img[data-srcset] {
 }
 
 .block {
-  margin: 120px 0;
+  margin-top: 120px;
+  margin-bottom: 120px;
+
+}
+
+.blockHeader {
+  display: flex;
+  margin-bottom: 45px;
+  align-items: center;
+
+  &__aside {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+}
+
+.row {
+  display: flex;
+  margin: 0 -15px;
+
+  & > * {
+    margin: 0 15px;
+  }
+}
+
+.col1 {
+  flex: 1;
+}
+
+.col2 {
+  flex: 2;
+}
+
+.fullWidth {
+  width: 100vw;
+  width: calc(100vw - var(--scrollbar-width));
+  left: 50%;
+  transform: translateX(-50%);
+
+  //margin-left: calc(-100vw / 2 + 500px / 2);
+  //margin-right: calc(-100vw / 2 + 500px / 2);
 }
 
 .content {
+  color: $dark-grey;
+
   h1, h2, h3, .h1, .h2, .h3 {
+    color: $black;
     margin-bottom: .4em;
   }
+
   h4, h5, h6, .h4, .h5, .h6 {
     margin-bottom: .75em;
   }
 
   p {
     margin-bottom: .75em;
+  }
+
+  &--white {
+    color: $white;
+
+    h1, h2, h3, .h1, .h2, .h3 {
+      color: $white;
+    }
   }
 }

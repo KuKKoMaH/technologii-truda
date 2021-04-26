@@ -1,0 +1,30 @@
+.team.block
+  .team__row
+    .team__main
+      .team__card(style='background-image: url(' + require('src/modules/team/img/img.jpg') + ')')
+        .team__note “Если тебе тяжело, значит ты поднимаешься в гору”
+        .team__info
+          .team__name Виталий Федин
+          .team__position Партнер
+    .team__items
+      each i in [1,2,3,4]
+        .team__item
+          .team__card.team__card--sm(style='background-image: url(' + require('src/modules/team/img/img.jpg') + ')')
+            .team__note “Если тебе тяжело, значит ты поднимаешься в гору”
+            .team__info
+              .team__name Виталий Федин
+              .team__position Партнер
+    .team__aside
+      .team__top В нашей команде
+      .team__counter
+        b 80+
+        |человек
+
+      .team__cta Стань частью#[br]команды своей#[br]мечты!
+
+      .team__buttons
+        a.btn.btn--outline.btn--block(href='#')
+          span Подробнее
+          +the_svg(require('src/img/arrow.sprite.svg'))(class="btn__icon")
+        a.btn.btn--block(href='#')
+          span Присоединиться

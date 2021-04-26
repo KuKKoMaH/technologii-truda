@@ -1,14 +1,4 @@
 .testimonials {
-  &__top {
-    display: flex;
-    align-items: center;
-    margin-bottom: 45px;
-  }
-
-  &__button {
-    margin-left: auto;
-  }
-
   &__slider {
     position: relative;
   }
@@ -28,7 +18,7 @@
   }
 
   &__card {
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    @include shadow();
     padding: 35px 25px 20px;
   }
 

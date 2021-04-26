@@ -1,0 +1,152 @@
+.team {
+  $this: &;
+
+  &__row {
+    display: flex;
+  }
+
+  &__main {
+    width: 360px;
+    margin-right: 20px;
+    flex-shrink: 0;
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px;
+  }
+
+  &__item {
+    width: 260px;
+    height: 260px;
+    padding: 10px;
+  }
+
+  &__aside {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    padding-top: 20px;
+  }
+
+  &__card {
+    position: relative;
+    height: 100%;
+    background: $black 50% 50% no-repeat;
+    background-size: cover;
+    color: $white;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: $black;
+      opacity: 0;
+      @include anim();
+    }
+
+    &:hover {
+      &:before {
+        opacity: .65;
+      }
+
+      & #{$this} {
+        &__note {
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+        }
+      }
+    }
+
+    &--sm {
+      & #{$this} {
+        &__info {
+          padding: 15px;
+        }
+
+        &__name {
+          font-size: 18px;
+        }
+
+        &__position {
+          font-size: 12px;
+        }
+
+        &__note {
+          font-size: 14px;
+          padding: 15px;
+          transform: translateY(15px);
+        }
+      }
+    }
+  }
+
+  &__info {
+    position: absolute;
+    width: 100%;
+    padding: 30px;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__name {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  &__position {
+    font-size: 14px;
+  }
+
+  &__note {
+    position: absolute;
+    top: 0;
+    padding: 30px;
+    left: 0;
+    font-size: 16px;
+    font-weight: 600;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    @include anim();
+  }
+
+  &__top {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  &__counter {
+    font-size: 40px;
+    font-weight: 500;
+    margin: 30px 0;
+    color: $blue;
+
+    b {
+      display: block;
+      font-size: 96px;
+      font-weight: 600;
+      line-height: .75;
+    }
+  }
+
+  &__cta {
+    color: $dark-grey;
+  }
+
+  &__buttons {
+    margin-top: auto;
+
+    .btn {
+      margin-bottom: 15px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

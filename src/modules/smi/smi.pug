@@ -1,0 +1,25 @@
+.smi.block
+  .blockHeader
+    h2 МЫ В СМИ
+    .blockHeader__aside
+      a.btn.btn--outline(href='#')
+        span Смотреть все
+        +the_svg(require('src/img/arrow.sprite.svg'))(class="btn__icon")
+
+  .smi__items
+    each i in [1,2]
+      .smi__item
+        .smi__card
+          .smi__head
+            .smi__photo: img(src=require('src/modules/smi/img/img.jpg'))
+            .smi__author
+              .smi__name Игорь Чеботнягин
+              .smi__position Директор SRG-ECO
+            .smi__logo: img(src=require('src/modules/smi/img/logo.jpg'))
+          .smi__title За работодателем закреплена обязанность обеспечивать сотрудников средствами индивидуальной защиты
+          .smi__text.content
+            p ООО «ЭАЦ Технологии труда» на рынке оказания услуг по охране труда с 2006 года. реализовали ряд крупных проектов федерального уровня и тысячи локальных внедрили новые технологии управления охраной и безопасностью труда на предприятиях наших Заказчиков
+          .smi__footer
+            .smi__date 23.03.2021
+            .smi__more
+              a(href='#') Подробнее >

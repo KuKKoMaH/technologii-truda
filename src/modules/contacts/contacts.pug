@@ -1,0 +1,34 @@
+.contacts.block
+  .contacts__main
+    .contacts__block
+      .contacts__label Ближайший к вам офис
+      .contacts__value: b МОСКВА
+
+    .contacts__block
+      .contacts__label Адрес:
+      .contacts__value 05082, Москва, Переведеновский пер., д. 13, стр. 18, Бизнес-центр «Переведеновский», 6 этаж (ст. м. Бауманская)
+
+    .contacts__block
+      .contacts__label Как добраться до нас?
+      .contacts__value Скачайте схему проезда
+      .contacts__buttons
+        a.btn.btn--sm.btn--outline(href='#')
+          +the_svg(require('src/img/download.sprite.svg'))(class="btn__icon")
+          span На автомобиле
+        a.btn.btn--sm.btn--outline(href='#')
+          +the_svg(require('src/img/download.sprite.svg'))(class="btn__icon")
+          span На общественном транспорте
+
+    .contacts__block
+      .contacts__label Телефон:
+      .contacts__value: a(href='tel:#') +7 (495) 191-16-38
+      .contacts__buttons
+        button.btn.btn--sm.btn--outline
+          +the_svg(require('src/img/phone.sprite.svg'))(class="btn__icon")
+          span Заказать звонок
+
+  .contacts__aside
+    .contacts__map.map(data-lat=59.939864 data-lng=30.314565)
+    .contacts__gallery.gallery
+      each i in [1,2,3]
+        .contacts__photo: img.gallery__item(src='https://via.placeholder.com/260x160' href='https://via.placeholder.com/260x160' data-width=260 data-height=160 data-index=(i - 1))

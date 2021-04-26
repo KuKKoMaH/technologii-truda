@@ -1,0 +1,15 @@
+.people.block
+  .people__items
+    each i in [1,2,3,4]
+      .people__item
+        .people__card
+          .people__image(style='background-image: url(' + require('src/modules/people/img/img.jpg') + ')')
+          .people__content
+            .people__head
+              .people__name Виталий Федин
+              .people__position Партнер
+            .people__text.content
+              p ЭАЦ "Технологии труда" работает на рынке охраны труда с 2006 года. За это время мы накопили большой опыт в реализации проектов различной сложности.
+            a.people__email(href='mailto:#') fhdbsj@eactt.ru
+            .people__socials
+              include ../socials/socials

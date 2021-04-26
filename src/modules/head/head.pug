@@ -1,7 +1,7 @@
-.head(style='background-image: url(' + require('src/modules/head/img/image.jpg') + ')')
-  .head__content
-    .c
-      h1 ПРОИЗВОДСТВЕННЫЙ КОНТРОЛЬ
-      .head__text Сформированные за десятилетия собственные методики и опыт позволяют нашим экспертам даже в рамках ограниченного бюджета выполнять качественные проекты.
-      .head__form
-        include ../lineForm/lineForm
+mixin head(title)
+  .head
+    include ../breadcrumbs/breadcrumbs
+    .head__row
+      h1=title
+      if block
+        block

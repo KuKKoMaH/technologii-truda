@@ -1,0 +1,57 @@
+.serviceArticles {
+  $this: &;
+
+  &__row {
+    display: flex;
+  }
+
+  &__info {
+    max-width: 490px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__button {
+    margin-top: auto;
+  }
+
+  &__list {
+    width: 50%;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  &__item {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: 30px;
+    @include shadow();
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__header {
+    font-size: 18px;
+    font-weight: 600;
+    color: $blue;
+    max-width: 420px;
+  }
+
+  &__date {
+    font-size: 12px;
+    color: $grey;
+    margin-top: 10px;
+  }
+
+  &__arrow {
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    right: 15px;
+    bottom: 15px;
+    color: $light-light-grey;
+  }
+}

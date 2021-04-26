@@ -52,38 +52,41 @@
         </div>
       </div>
     </header>
-    <div class="head" style="background-image: url(img/modules_head_img_image.jpg)">
-      <div class="head__content">
-        <div class="c">
-          <h1>ПРОИЗВОДСТВЕННЫЙ КОНТРОЛЬ</h1>
-          <div class="head__text">Сформированные за десятилетия собственные методики и опыт позволяют нашим экспертам даже в рамках ограниченного бюджета выполнять качественные проекты.</div>
-          <div class="head__form">
-            <div class="lineForm">
-              <div class="lineForm__input">
-                <input placeholder="ФИО">
-              </div>
-              <div class="lineForm__input">
-                <input placeholder="E-mail">
-              </div>
-              <div class="lineForm__input">
-                <input type="tel" placeholder="Телефон">
-              </div>
-              <div class="lineForm__confirm">
-                <label class="checkbox">
-                  <input type="checkbox"><span>Согласен(а) на<br>обработку моих<br><a href="#">персональных данных</a></span>
-                </label>
-              </div>
-              <div class="lineForm__button">
-                <button class="btn btn--orange">Оставить заявку</button>
+    <div class="c">
+      <div class="headBanner fullWidth" style="background-image: url(img/modules_headBanner_img_image.jpg)">
+        <div class="headBanner__content">
+          <div class="c">
+            <div class="breadcrumbs"><span>Главная - Услуги</span></div>
+            <h1>ПРОИЗВОДСТВЕННЫЙ КОНТРОЛЬ</h1>
+            <div class="headBanner__text">Сформированные за десятилетия собственные методики и опыт позволяют нашим экспертам даже в рамках ограниченного бюджета выполнять качественные проекты.</div>
+            <div class="headBanner__form">
+              <div class="lineForm">
+                <div class="lineForm__input">
+                  <input placeholder="ФИО">
+                </div>
+                <div class="lineForm__input">
+                  <input placeholder="E-mail">
+                </div>
+                <div class="lineForm__input">
+                  <input type="tel" placeholder="Телефон">
+                </div>
+                <div class="lineForm__confirm">
+                  <label class="checkbox">
+                    <input type="checkbox"><span>Согласен(а) на<br>обработку моих<br><a href="#">персональных данных</a></span>
+                  </label>
+                </div>
+                <div class="lineForm__button">
+                  <button class="btn btn--orange">Оставить заявку</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="services block">
-      <div class="c">
-        <h2>УСЛУГИ</h2>
+      <div class="services block">
+        <div class="blockHeader">
+          <h2>УСЛУГИ</h2>
+        </div>
         <div class="services__row">
           <div class="services__main">
             <div class="services__items">
@@ -131,9 +134,7 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="clients block">
-      <div class="c">
+      <div class="clients block">
         <div class="clients__row">
           <div class="clients__left">
             <h2>НАМ ДОВЕРЯЮТ</h2>
@@ -154,19 +155,29 @@
                 <div class="clients__item"><img src="img/modules_clients_img_logo.png"></div>
               </div>
             </div>
+            <div class="nav nav--center">
+              <button class="nav__item nav__item--prev">
+                <svg>
+                  <use xlink:href="img/sprite.svg#arrow-usage"></use>
+                </svg>
+              </button>
+              <button class="nav__item nav__item--next">
+                <svg>
+                  <use xlink:href="img/sprite.svg#arrow-usage"></use>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="about block">
-      <div class="c">
+      <div class="about block">
         <div class="about__row">
           <div class="about__left">
             <div class="content">
               <h2>О НАС</h2>
               <h4>Качество<br>и ответственность</h4>
               <p>Сформированные за десятилетия собственные методики и опыт позволяют нашим экспертам даже в рамках ограниченного бюджета выполнять качественные проекты. Всю ответственность за выполнение работ по охране труда и производственной безопасности мы полностью берем на себя: субподрядчики не привлекаются, а деятельность компании застрахована на 35 млн рублей!</p>
-              <div class="about__button"><a class="btn btn--outline" href="#">Подробнее
+              <div class="about__button"><a class="btn btn--outline" href="#"><span>Подробнее</span>
                   <svg class="btn__icon">
                     <use xlink:href="img/sprite.svg#arrow-usage"></use>
                   </svg></a></div>
@@ -206,12 +217,10 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="testimonials block">
-      <div class="c">
-        <div class="testimonials__top">
+      <div class="testimonials block">
+        <div class="blockHeader">
           <h2>ОТЗЫВЫ</h2>
-          <div class="testimonials__button"><a class="btn btn--outline" href="#">Смотреть все
+          <div class="testimonials__button"><a class="btn btn--outline" href="#"><span>Смотреть все</span>
               <svg class="btn__icon">
                 <use xlink:href="img/sprite.svg#arrow-usage"></use>
               </svg></a></div>
@@ -319,25 +328,23 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="banner" style="background-image: url(img/modules_banner_img_bg.jpg)">
-      <div class="c">
-        <div class="banner__content">
-          <div class="banner__text">
-            <h2 class="banner__title">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</h2>
-            <p>Решение проблем в сфере охраны труда - это смысл деятельности экспертно- аналитического центра “Технологии труда”!</p>
-          </div>
-          <div class="banner__action">
-            <button class="btn btn--orange">Оставить заявку</button>
+      <div class="banner banner--bg fullWidth" style="background-image: url(img/modules_banner_img_bg.jpg)">
+        <div class="c">
+          <div class="banner__content">
+            <div class="banner__text">
+              <h2 class="banner__title">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</h2>
+              <p>Решение проблем в сфере охраны труда - это смысл деятельности экспертно- аналитического центра “Технологии труда”!</p>
+            </div>
+            <div class="banner__action">
+              <button class="btn btn--orange">Оставить заявку</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="events block">
-      <div class="c">
-        <div class="events__top">
+      <div class="events block">
+        <div class="blockHeader">
           <h2>СЕМИНАРЫ И ВЕБИНАРЫ</h2>
-          <div class="events__button"><a class="btn btn--outline" href="#">Смотреть все
+          <div class="blockHeader__aside"><a class="btn btn--outline" href="#"><span>Смотреть все</span>
               <svg class="btn__icon">
                 <use xlink:href="img/sprite.svg#arrow-usage"></use>
               </svg></a></div>
@@ -571,17 +578,15 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="news block">
-      <div class="c">
-        <div class="news__top">
+      <div class="news block">
+        <div class="blockHeader">
           <h2>НОВОСТИ</h2>
-          <div class="news__aside">
+          <div class="blockHeader__aside">
             <div class="news__menu">
               <div class="news__link"><a href="#">Охрана труда</a></div>
               <div class="news__link"><a href="#">Экология</a></div>
               <div class="news__link"><a href="#">Корпоративные</a></div>
-            </div><a class="btn btn--outline" href="#">Смотреть все
+            </div><a class="btn btn--outline" href="#"><span>Смотреть все</span>
               <svg class="btn__icon">
                 <use xlink:href="img/sprite.svg#arrow-usage"></use>
               </svg></a>
@@ -608,9 +613,7 @@
               </div></a></div>
         </div>
       </div>
-    </div>
-    <div class="subscribe block">
-      <div class="c">
+      <div class="subscribe block">
         <div class="subscribe__row">
           <div class="subscribe__content content">
             <h2>ПОДПИШИТЕСЬ НА НОВОСТИ</h2>
@@ -685,11 +688,43 @@
         </div>
       </div>
     </footer>
-    <div class="hidden">
-      <!--include ../modules/photoswipe/photoswipe-->
-      <!--include ../modules/popup/popup-thank-->
-      <!--include ../modules/popup/popup-callback-->
-      <!--include ../modules/popup/popup-akcii-->
+    <div class="hidden"></div>
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="pswp__bg"></div>
+      <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+          <div class="pswp__top-bar">
+            <div class="pswp__counter"></div>
+            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+            <!--button.pswp__button.pswp__button--share(title="Share")-->
+            <!--button.pswp__button.pswp__button--fs(title="Toggle fullscreen")-->
+            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+            <div class="pswp__preloader">
+              <div class="pswp__preloader__icn">
+                <div class="pswp__preloader__cut">
+                  <div class="pswp__preloader__donut"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+            <div class="pswp__share-tooltip"></div>
+          </div>
+          <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+          <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+          <div class="pswp__caption">
+            <div class="pswp__caption__center"></div>
+            <!--include ../modules/popup/popup-thank-->
+            <!--include ../modules/popup/popup-callback-->
+            <!--include ../modules/popup/popup-akcii-->
+          </div>
+        </div>
+      </div>
     </div>
     <!--  include ../modules/popup/popup-partnership-->
     <!--  include ../modules/popup/popup-abandon1-->
@@ -697,5 +732,6 @@
     <!--  include ../modules/popup/popup-abandon3-->
     <!--  include ../modules/popup/popup-testPopup-->
     <!--  include ../modules/popup/popup-casePopup-->
+    <script>(function ( w, dE ) {function u() {dE.style.setProperty('--scrollbar-width', w.innerWidth - dE.clientWidth + "px");}w.addEventListener('resize', u);u()})(window, document.documentElement)</script>
   <script defer src="app.js"></script></body>
 </html>

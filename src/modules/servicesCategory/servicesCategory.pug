@@ -1,0 +1,16 @@
+.servicesCategory.block
+  .blockHeader
+    .servicesCategory__title Охрана труда
+  .servicesCategory__items
+    each i in [1,2,3,4,5,6]
+      .servicesCategory__item
+        a.servicesCategory__card(style='background-image: url(' + require('src/modules/servicesCategory/img/bg.jpg') + ')' href='#')
+          +the_svg(require('src/img/download.sprite.svg'))(class="servicesCategory__icon")
+          .servicesCategory__header Система управления охраной труда
+          .servicesCategory__content
+            .servicesCategory__head Система управления охраной труда
+            .servicesCategory__text.content
+              p Пакет документов по охране труда документов по охране труда документов по охране труда документов по охране труда документов по охране труда документов по охране труда документов по охране труда документов по охране труда окументов по охране труда
+            .btn.btn--sm
+              span Подробнее
+              +the_svg(require('src/img/arrow.sprite.svg'))(class="btn__icon")

@@ -1,0 +1,57 @@
+.advantages {
+  &__items {
+    margin: -15px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    padding: 15px;
+    width: 25%;
+  }
+
+  &__card {
+    position: relative;
+    background: $black 50% 50%;
+    background-size: cover;
+    @include shadow();
+
+    &:before, &:after {
+      content: '';
+      display: block;
+    }
+
+    &:before {
+      padding-bottom: 100%;
+      width: 100%;
+    }
+
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: $black;
+      opacity: .7;
+
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    padding: 0 20px;
+    transform: translateY(-50%);
+    z-index: 1;
+    color: $white;
+    font-size: 16px;
+  }
+
+  &__header {
+    margin-bottom: -5px;
+    font-size: 40px;
+  }
+}

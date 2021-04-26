@@ -1,0 +1,100 @@
+.vacancies {
+  $this: &;
+
+  &__headers {
+    display: flex;
+    margin-bottom: 35px;
+  }
+
+  &__header {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 100%;
+      background: $grey;
+      margin: 0 25px;
+    }
+
+    &:last-child:after {
+      display: none;
+    }
+
+    button {
+      font-size: 18px;
+      @include anim();
+
+      &:hover {
+        color: $blue;
+      }
+    }
+
+    &--active {
+      button {
+        color: $blue;
+      }
+    }
+  }
+
+  &__block {
+    display: flex;
+  }
+
+  &__aside {
+    width: 360px;
+    flex-shrink: 0;
+    margin-left: 35px;
+  }
+
+  &__bodies {
+    flex: 1;
+    //overflow: auto;
+    position: relative;
+  }
+
+  &__body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(30px);
+    @include anim(.2s);
+
+    &--active {
+      position: relative;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+    }
+  }
+
+  &__item {
+    background: $white;
+    @include shadow();
+    margin-bottom: 30px;
+    padding: 25px;
+  }
+
+  &__title {
+    font-size: 22px;
+    font-weight: 600;
+    color: $blue;
+    margin-bottom: 30px;
+  }
+
+  &__salary {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  &__card {
+    margin-bottom: 30px;
+  }
+}

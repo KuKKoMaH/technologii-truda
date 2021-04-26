@@ -1,0 +1,51 @@
+.cases{
+  &__slider {
+    position: relative;
+  }
+
+  &__container {
+    overflow: hidden;
+    margin: -15px;
+  }
+
+  &__items {
+    display: flex;
+  }
+
+  &__item {
+    flex-shrink: 0;
+    padding: 15px;
+  }
+
+  &__card {
+    @include shadow();
+    padding: 35px 25px 20px;
+    display: flex;
+  }
+
+  &__left {
+    border-right: 1px solid #C4C4C4;
+    padding-right: 30px;
+    width: 45%;
+    flex-shrink: 0;
+  }
+
+  &__right {
+    padding-left: 30px;
+  }
+
+  &__text {
+    color: $dark-grey;
+    margin-bottom: 10px;
+  }
+
+  &__link {
+    color: $blue;
+    font-size: 18px;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

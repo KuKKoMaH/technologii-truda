@@ -1,0 +1,76 @@
+.articles {
+  $this: &;
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+  }
+
+  &__item {
+    padding: 15px;
+    width: 50%;
+  }
+
+  &__card {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    @include shadow();
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px;
+  }
+
+  &__tags {
+    display: flex;
+    align-items: center;
+  }
+
+  &__tag {
+    display: block;
+    font-size: 14px;
+    color: $blue;
+    background: $light-light-grey;
+    border-radius: 5px;
+    padding: 8px 20px;
+  }
+
+  &__copy {
+    margin-left: auto;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    color: $blue;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    font-size: 14px;
+  }
+
+  &__footer {
+    margin-top: auto;
+    padding-top: 20px;
+    display: flex;
+  }
+
+  &__date {
+    font-size: 14px;
+    color: $grey;
+  }
+
+  &__more {
+    margin-left: auto;
+  }
+}

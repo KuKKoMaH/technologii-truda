@@ -1,0 +1,33 @@
+.cases.block
+  .blockHeader
+    h2 КЕЙСЫ
+    .blockHeader__aside
+      a.btn.btn--outline(href='#')
+        span Смотреть все
+        +the_svg(require('src/img/arrow.sprite.svg'))(class="btn__icon")
+
+  .cases__slider
+    .cases__container
+      .cases__items
+        each i in [1,2,3]
+          .cases__item
+            .cases__card
+              .cases__left
+                .cases__head
+                  .cases__logo
+                    img(src=require('src/modules/clients/img/logo.png'))
+                  .cases__info
+                    .cases__header Ростелеком
+                    .cases__sub Сфера деятельности компании
+                .cases__text Когда человек сознательно или интуитивно выбирает себе в жизни какую-то цель, жизненную задачу, он невольно дает себе оценку.
+                a.cases__link(href='#') Читать отзыв >
+              .cases__right
+                .cases__text.content
+                  h5 Раскрытие кейса
+                  p Когда человек сознательно или интуитивно выбирает себе в жизни какую-то цель, жизненную задачу, он невольно дает себе оценку.  Когда человек сознательно или интуитивно выбирает себе в жизни какую-то цель, жизненную задачу, он невольно дает себе оценку.  Когда человек сознательно или интуитивно выбирает себе в жизни какую-то цель, жизненную задачу, он невольно дает себе оценку.  Когда человек сознательно или интуитивно выбирает себе в жизни какую-то цель, жизненную задачу, он невольно дает себе оценку.
+                a.cases__link(href='#') Подробнее >
+
+
+    .nav.nav--center
+      button.nav__item.nav__item--prev: +the_svg(require('src/img/arrow.sprite.svg'))
+      button.nav__item.nav__item--next: +the_svg(require('src/img/arrow.sprite.svg'))

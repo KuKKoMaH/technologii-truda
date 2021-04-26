@@ -1,0 +1,22 @@
+.socials {
+  $this: &;
+  display: flex;
+  align-items: center;
+  margin: 0 -4px;
+
+  a {
+    display: block;
+    color: $blue;
+    margin: 0 4px;
+    @include anim();
+    &:hover {
+      color: $black;
+    }
+  }
+
+  svg {
+    display: block;
+    width: 22px;
+    height: 22px;
+  }
+}

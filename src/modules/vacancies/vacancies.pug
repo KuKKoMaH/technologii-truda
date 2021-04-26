@@ -1,0 +1,28 @@
+.vacancies.block
+  .blockHeader
+    h2 ВАКАНСИИ
+  .vacancies__headers
+    .vacancies__header.vacancies__header--active: button Продажи
+    .vacancies__header: button Маркетинг
+    .vacancies__header: button Охрана труда
+    .vacancies__header: button Административный персонал
+  .vacancies__block
+    .vacancies__bodies
+      each i in [1,2,3,4]
+        .vacancies__body(class=i === 1 ? 'vacancies__body--active' : '')
+          each i in [1,2,3,4]
+            .vacancies__item
+              .vacancies__title Менеджер по продажам
+              .vacancies__salary от 45 000 руб.
+              .vacancies__description.content
+                p Мы входим в ТОП-5 лидеров рынка, наша испытательная лаборатория аккредитована в Росаккредитации, а эксперты по охране труда используют современное высококачественное оборудование.
+                p Основа успеха компании – высокий уровень квалификации специалистов и возможность комплексного решения сложных проблем в сфере безопасности и охраны труда.
+              .vacancies__more
+                a(href='#') Подробнее >
+
+    .vacancies__aside
+      .vacancies__card
+        include ../contactCard/contactCard
+
+      button.btn.btn--block Оставить заявку
+

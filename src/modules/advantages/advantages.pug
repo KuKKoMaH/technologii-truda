@@ -1,0 +1,11 @@
+.advantages.block
+  .blockHeader
+    h2 ПРЕИМУЩЕСТВА
+  .advantages__items
+    each i in [1,2,3,4,5]
+      .advantages__item
+        .advantages__card(style='background-image: url(' + require('src/modules/advantages/img/bg.jpg') + ')')
+          .advantages__content
+            .advantages__header 14 000+
+            | обучено специалистов
+

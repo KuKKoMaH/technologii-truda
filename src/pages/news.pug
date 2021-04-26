@@ -1,0 +1,9 @@
+extends ../pug/_layout
+include ../modules/head/head
+
+block body
+  .c
+    +head('НОВОСТИ')
+    include ../modules/submenu/submenu
+    include ../modules/news/news_list
+    include ../modules/subscribe/subscribe

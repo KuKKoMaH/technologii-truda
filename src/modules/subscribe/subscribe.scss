@@ -1,4 +1,31 @@
 .subscribe {
+  $this: &;
+
+  &--bg {
+    position: relative;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    background: $black 50% 50% no-repeat;
+    background-size: cover;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: $black;
+      opacity: .65;
+    }
+
+    & #{$this}__row {
+      position: relative;
+      z-index: 1;
+      color: $white;
+    }
+  }
+
   &__row {
     display: flex;
     align-items: center;

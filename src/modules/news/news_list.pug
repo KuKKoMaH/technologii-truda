@@ -1,0 +1,11 @@
+.news.block
+
+  .news__items
+    each i in [1,2,3,4,5]
+      .news__item
+        a.news__card(style='background-image: url(' + require('src/modules/news/img/img.jpg') + ')' href='#')
+          .news__label Новости охраны труда
+          .news__content
+            .news__title В Оренбурге запустили пилотный проект по внедрению СУПР
+            .news__date 25.02.2021
+  include ../pagination/pagination

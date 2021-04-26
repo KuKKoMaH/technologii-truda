@@ -1,23 +1,20 @@
 .news.block
-  .c
-    .news__top
-      h2 НОВОСТИ
-      .news__aside
-        .news__menu
-          .news__link: a(href='#') Охрана труда
-          .news__link: a(href='#') Экология
-          .news__link: a(href='#') Корпоративные
-        a.btn.btn--outline(href='#')
-          | Смотреть все
-          +the_svg(require('src/img/arrow.sprite.svg'))(class="btn__icon")
+  .blockHeader
+    h2 НОВОСТИ
+    .blockHeader__aside
+      .news__menu
+        .news__link: a(href='#') Охрана труда
+        .news__link: a(href='#') Экология
+        .news__link: a(href='#') Корпоративные
+      a.btn.btn--outline(href='#')
+        span Смотреть все
+        +the_svg(require('src/img/arrow.sprite.svg'))(class="btn__icon")
 
-    .news__items
-      each i in [1,2,3]
-        .news__item
-          a.news__card(style='background-image: url(' + require('src/modules/news/img/img.jpg') + ')' href='#')
-            .news__label Новости охраны труда
-            .news__content
-              .news__title В Оренбурге запустили пилотный проект по внедрению СУПР
-              .news__date 25.02.2021
-
-
+  .news__items
+    each i in [1,2,3]
+      .news__item
+        a.news__card(style='background-image: url(' + require('src/modules/news/img/img.jpg') + ')' href='#')
+          .news__label Новости охраны труда
+          .news__content
+            .news__title В Оренбурге запустили пилотный проект по внедрению СУПР
+            .news__date 25.02.2021

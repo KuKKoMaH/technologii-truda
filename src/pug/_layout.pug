@@ -17,7 +17,7 @@ html
     block body
     include ../modules/footer/footer
     .hidden
-      //include ../modules/photoswipe/photoswipe
+    include ../modules/photoswipe/photoswipe
       //include ../modules/popup/popup-thank
       //include ../modules/popup/popup-callback
       //include ../modules/popup/popup-akcii
@@ -27,3 +27,5 @@ html
     //  include ../modules/popup/popup-abandon3
     //  include ../modules/popup/popup-testPopup
     //  include ../modules/popup/popup-casePopup
+    script.
+      (function ( w, dE ) {function u() {dE.style.setProperty('--scrollbar-width', w.innerWidth - dE.clientWidth + "px");}w.addEventListener('resize', u);u()})(window, document.documentElement)

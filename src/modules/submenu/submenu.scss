@@ -1,0 +1,25 @@
+.submenu {
+  $this: &;
+
+  margin: 45px 0;
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+  }
+
+  &__item {
+    margin: 15px;
+    background: $light-light-grey;
+    font-size: 14px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: $black;
+
+    //&:hover {
+    //  color: $black;
+    //  font-weight: 600;
+    //}
+  }
+}

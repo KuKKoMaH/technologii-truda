@@ -22,6 +22,7 @@
     //background: $white;
     background: transparent;
     color: $blue;
+    text-decoration: none;
   }
 
   &--outline {
@@ -70,7 +71,14 @@
   &__icon {
     max-width: 12px;
     max-height: 12px;
-    margin-left: 10px;
+
+    &:first-child {
+      margin-right: 10px;
+    }
+
+    &:last-child {
+      margin-left: 10px;
+    }
   }
 }
 

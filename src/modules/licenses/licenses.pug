@@ -1,0 +1,22 @@
+.licenses.block
+  .blockHeader
+    h2 ЛИЦЕНЗИИ И АККРЕДИТАЦИИ
+    .blockHeader__aside
+      a.btn.btn--outline(href='#')
+        span Смотреть все
+        +the_svg(require('src/img/arrow.sprite.svg'))(class="btn__icon")
+
+  .licenses__slider.gallery
+    .licenses__container
+      .licenses__items
+          each i in [1,2,3,4,5]
+            .licenses__item
+              a.licenses__doc.gallery__item(style='background-image: url(' + require('src/modules/licenses/img/img.jpg') + ')' data-index=(i-1) data-width=222 data-height=309 href=require('src/modules/licenses/img/img.jpg'))
+                .licenses__button: +the_svg(require('src/img/expand.sprite.svg'))
+                .licenses__content
+                  .licenses__header Уведомление Минтруда
+                  .licenses__text о внесении в реестр организаций, проводящих СОУТ
+
+    .nav.nav--center
+      button.nav__item.nav__item--prev: +the_svg(require('src/img/arrow.sprite.svg'))
+      button.nav__item.nav__item--next: +the_svg(require('src/img/arrow.sprite.svg'))

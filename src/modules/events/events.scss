@@ -1,14 +1,4 @@
 .events {
-  &__top {
-    display: flex;
-    align-items: center;
-    margin-bottom: 45px;
-  }
-
-  &__button {
-    margin-left: auto;
-  }
-
   &__slider {
     position: relative;
   }
@@ -28,7 +18,7 @@
   }
 
   &__card {
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    @include shadow();
     display: flex;
     min-height: 200px;
   }
