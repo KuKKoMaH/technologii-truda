@@ -141,7 +141,7 @@ module.exports = {
   },
 
   plugins: [
-    new MiniCssExtractPlugin({ filename: 'style.css' }),
+    new MiniCssExtractPlugin({ filename: 'style.css?' + Date.now() }),
     new SpriteLoaderPlugin({
       // plainSprite: true,
     }),
