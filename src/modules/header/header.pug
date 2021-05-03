@@ -1,3 +1,4 @@
+.header__placeholder
 header.header
   .header__top
     .c
@@ -27,7 +28,8 @@ header.header
             li: a(href='#') УЧЕБНЫЙ ЦЕНТР
             li: a(href='#') ЕЩЕ
         .header__contacts
-          button.btn.btn--orange Оставить заявку
+          button.btn.btn--sm.btn--orange(data-micromodal-trigger="callback-popup") Оставить заявку
         button.header__hamburger
           +the_svg(require('src/modules/header/img/menu.sprite.svg'))(class='header__hamburgerIcon')
-
+  .header__fullMenu
+    include ../headerMenu/headerMenu

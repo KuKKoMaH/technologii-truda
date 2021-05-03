@@ -1,4 +1,6 @@
 .steps {
+  $this: &;
+
   &__items {
     display: flex;
     flex-wrap: wrap;
@@ -8,6 +10,12 @@
   &__item {
     width: 33.333%;
     padding: 35px;
+
+    &:last-child {
+      & #{$this}__arrow {
+        display: none;
+      }
+    }
   }
 
   &__number {
@@ -30,7 +38,7 @@
     position: absolute;
     width: 26px;
     height: 26px;
-    color: $light-grey;
+    color: $light-light-grey;
     left: 100%;
     top: 50%;
     margin-top: -13px;

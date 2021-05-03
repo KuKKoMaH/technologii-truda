@@ -22,6 +22,10 @@
     &:last-child:after {
       display: none;
     }
+
+    a {
+      color: $black;
+    }
   }
 
   &__items {

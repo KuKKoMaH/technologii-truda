@@ -1,16 +1,75 @@
 .header {
+  $this: &;
+
   @include shadow();
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  &:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.57);
+    opacity: 0;
+    visibility: hidden;
+    @include anim();
+  }
+
+  &--menu {
+    &:before {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    & #{$this}__fullMenu {
+      opacity: 1;
+      transform: none;
+      visibility: visible;
+      //pointer-events: all;
+    }
+  }
+
+  &__fullMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateX(50px);
+    visibility: hidden;
+    pointer-events: none;
+    @include anim(.2s);
+    z-index: 1;
+    will-change: opacify, trasform, visibility;
+  }
+
+  &__placeholder {
+    height: $header-top-height + $header-bottom-height;
+  }
+
+  &__top, &__bottom {
+    background: $white;
+    position: relative;
+    z-index: 1;
+  }
 
   &__top {
     border-bottom: 1px solid rgba(0, 0, 0, 0.14);
   }
 
   &__top &__row {
-    height: 40px;
+    height: $header-top-height - 1px; // border
   }
 
   &__bottom &__row {
-    height: 65px;
+    height: $header-bottom-height;
   }
 
   &__row {
@@ -20,6 +79,10 @@
 
   &__topMenu {
     margin-right: auto;
+
+    li:before {
+      display: none;
+    }
 
     ul {
       font-size: 10px;
@@ -90,6 +153,10 @@
       justify-content: center;
       margin: 0;
       padding: 0;
+    }
+
+    li:before {
+      display: none;
     }
 
     li {

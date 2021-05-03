@@ -116,6 +116,12 @@
   }
 
   &__more {
+    color: $black;
+
+    &:hover {
+      color: $blue;
+      text-decoration: none;
+    }
     svg {
       width: 12px;
       height: 12px;

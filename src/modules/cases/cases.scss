@@ -34,9 +34,41 @@
     padding-left: 30px;
   }
 
+  &__head {
+    display: flex;
+    margin-bottom: 30px;
+  }
+
+  &__logo {
+    width: 160px;
+    flex-shrink: 0;
+    padding-right: 15px;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  &__header {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  &__sub {
+    font-size: 14px;
+    color: $dark-grey;
+  }
+
   &__text {
     color: $dark-grey;
     margin-bottom: 10px;
+  }
+
+  &__footer {
+    margin-top: 10px;
+    text-align: right;
   }
 
   &__link {

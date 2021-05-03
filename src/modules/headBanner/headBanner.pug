@@ -1,8 +1,10 @@
-.headBanner.fullWidth(style='background-image: url(' + require('src/modules/headBanner/img/image.jpg') + ')')
-  .headBanner__content
-    .c
-      include ../breadcrumbs/breadcrumbs
-      h1 ПРОИЗВОДСТВЕННЫЙ КОНТРОЛЬ
-      .headBanner__text Сформированные за десятилетия собственные методики и опыт позволяют нашим экспертам даже в рамках ограниченного бюджета выполнять качественные проекты.
-      .headBanner__form
-        include ../lineForm/lineForm
+mixin headBanner(withBreadcrumbs)
+  .headBanner.fullWidth(style='background-image: url(' + require('src/modules/headBanner/img/image.jpg') + ')')
+    .headBanner__content
+      .c
+        if withBreadcrumbs
+          include ../breadcrumbs/breadcrumbs
+        h1 ПРОИЗВОДСТВЕННЫЙ КОНТРОЛЬ
+        .headBanner__text Сформированные за десятилетия собственные методики и опыт позволяют нашим экспертам даже в рамках ограниченного бюджета выполнять качественные проекты.
+        .headBanner__form
+          include ../lineForm/lineForm

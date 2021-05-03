@@ -1,3 +1,19 @@
 .input {
+  input {
+    text-align: left;
+    display: block;
+    width: 100%;
+    border: 1px solid $light-grey;
+    padding: 20px 24px;
+    border-radius: 5px;
+    @include anim();
 
+    &:hover {
+      border-color: $grey;
+    }
+
+    &:focus {
+      border-color: $dark-grey;
+    }
+  }
 }

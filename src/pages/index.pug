@@ -1,8 +1,9 @@
 extends ../pug/_layout
+include ../modules/headBanner/headBanner
 
 block body
   .c
-    include ../modules/headBanner/headBanner
+    +headBanner()
     include ../modules/services/services
     include ../modules/clients/clients
     include ../modules/about/about

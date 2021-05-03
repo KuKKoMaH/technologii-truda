@@ -35,3 +35,5 @@ import './modules/contacts/contacts.js';
 import './modules/smi/smi.js';
 import './modules/contactCard/contactCard.js';
 import './modules/articles/articles.js';
+import './modules/headerMenu/headerMenu.js';
+import './modules/popup/popup.js';

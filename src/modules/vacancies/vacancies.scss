@@ -79,6 +79,14 @@
     @include shadow();
     margin-bottom: 30px;
     padding: 25px;
+
+    &--full {
+      & #{$this}__description {
+        max-height: none;
+        overflow: visible;
+        -webkit-line-clamp: unset;
+      }
+    }
   }
 
   &__title {
@@ -94,7 +102,27 @@
     margin-bottom: 10px;
   }
 
+  &__description {
+    overflow: hidden;
+    max-height: 1.25em * 5;
+    @supports (-webkit-line-clamp: 5) {
+      max-height: none;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 5; /* number of lines to show */
+      -webkit-box-orient: vertical;
+    }
+    //max-height: 1.25em * 5;
+    //overflow: hidden;
+  }
+
   &__card {
     margin-bottom: 30px;
   }
+
+  &__more {
+    margin-top: 10px;
+  }
+
+
 }

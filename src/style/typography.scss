@@ -62,8 +62,26 @@ ul li, ol li {
 }
 
 ul {
-  list-style: disc;
+  list-style: none;
   padding-left: 1.55em;
+
+  li {
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: -1.1em;
+      //top: .45em;
+      //width: .65em;
+      //height: .65em;
+      top: 6px;
+      width: 8px;
+      height: 12px;
+      background-image: url("data:image/svg+xml,%3Csvg width='8' height='12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.074 6.08L.537 1.542 1.833.246 7.666 6.08l-5.833 5.834-1.296-1.297L5.074 6.08z' fill='%230067A5'/%3E%3C/svg%3E");
+    }
+  }
+
 }
 
 ol {

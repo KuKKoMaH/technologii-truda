@@ -1,17 +1,17 @@
 import initSlider from "src/js/initSlider";
 
-initSlider('.clients__container', {
+initSlider('.clients__container', ( $el ) => ({
   wrapperClass:           'clients__items',
   slideClass:             'clients__item',
   navigation:             {
-    // prevEl: $el.find('.eventsList__nav--prev')[0],
-    // nextEl: $el.find('.eventsList__nav--next')[0],
+    prevEl: $el.parents('.clients__slider').find('.nav__item--prev')[0],
+    nextEl: $el.parents('.clients__slider').find('.nav__item--next')[0],
   },
   // touchEventsTarget: 'wrapper',
   slidesPerColumn:        2,
   slidesPerView:          3,
   slidesPerGroup:         3,
-  slidesPerColumnFill: 'row',
+  slidesPerColumnFill:    'row',
   // spaceBetween:           20,
   speed:                  400,
   loopFillGroupWithBlank: true,
@@ -23,4 +23,4 @@ initSlider('.clients__container', {
     //   slidesPerView: 2,
     // },
   },
-})
+}));

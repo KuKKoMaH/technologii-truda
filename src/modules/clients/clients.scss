@@ -9,10 +9,12 @@
   &__left {
     //width: 430px;
     margin-right: 100px;
+    display: flex;
+    flex-direction: column;
     //flex-shrink: 0;
   }
 
-  &__right {
+  &__slider {
     min-width: 610px;
     position: relative;
   }
@@ -29,17 +31,27 @@
   }
 
   &__text {
+    margin-top: auto;
     color: $dark-grey;
   }
 
   &__container {
     overflow: hidden;
-    //margin-top: 30px;
 
     &.swiper-container-multirow {
       & #{$this}__items {
         flex-wrap: wrap;
       }
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0px;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background: $white;
+      z-index: 1;
     }
   }
 

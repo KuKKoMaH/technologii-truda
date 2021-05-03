@@ -9,11 +9,12 @@ export default ( { $items } ) => {
     const index = $el.data('index');
     if (!inited[index]) {
       slides.push({
-        src:   $el.attr('href'),
-        w:     $el.data('width'),
-        h:     $el.data('height'),
-        title: $el.data('caption'),
-        index: index,
+        src:      $el.attr('href'),
+        w:        $el.data('width'),
+        h:        $el.data('height'),
+        title:    $el.data('title'),
+        subtitle: $el.data('subtitle'),
+        index:    index,
       });
       inited[index] = true;
     }
@@ -35,10 +36,28 @@ export default ( { $items } ) => {
         history:          false,
         closeOnScroll:    false,
         maxSpreadZoom:    1,
-        getDoubleTapZoom: function ( isMouseClick, item ) {
-          return item.initialZoomLevel;
-        },
+        // getDoubleTapZoom: function ( isMouseClick, item ) {
+        //   return item.initialZoomLevel;
+        // },
         pinchToClose:     false,
+        addCaptionHTMLFn: function ( item, captionEl, isFake ) {
+          // item      - slide object
+          // captionEl - caption DOM element
+          // isFake    - true when content is added to fake caption container
+          //             (used to get size of next or previous caption)
+
+          if (!item.title && !item.subtitle) {
+            captionEl.children[0].innerHTML = '';
+            return false;
+          }
+
+          let html = '';
+          if (item.title) html += `<div class="pswp__title">${item.title}</div>`;
+          if (item.subtitle) html += item.subtitle;
+          captionEl.children[0].innerHTML = html;
+          return true;
+        },
+
       },
     );
 

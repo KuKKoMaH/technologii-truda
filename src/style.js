@@ -43,3 +43,5 @@ import './modules/contacts/contacts.scss';
 import './modules/smi/smi.scss';
 import './modules/contactCard/contactCard.scss';
 import './modules/articles/articles.scss';
+import './modules/headerMenu/headerMenu.scss';
+import './modules/popup/popup.scss';

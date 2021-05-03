@@ -2,6 +2,7 @@ import 'jquery';
 import Breakpoints from 'breakpoints-js';
 import initGallery from "src/js/initGallery";
 import './initMap';
+import './initPopups';
 
 Breakpoints({
   sm: {
