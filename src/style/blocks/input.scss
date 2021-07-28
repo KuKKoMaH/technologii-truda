@@ -15,5 +15,12 @@
     &:focus {
       border-color: $dark-grey;
     }
+
+    &.wpcf7-not-valid {
+      border-color: $red;
+      color: $red;
+      @include placeholder($red);
+    }
   }
+
 }

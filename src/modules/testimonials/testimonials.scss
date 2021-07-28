@@ -1,4 +1,6 @@
 .testimonials {
+  $this: &;
+
   &__slider {
     position: relative;
   }
@@ -6,32 +8,74 @@
   &__container {
     overflow: hidden;
     margin: -15px;
+    @include media('md') {
+      //margin: 0;
+      overflow: visible;
+    }
   }
 
   &__items {
     display: flex;
+    @include media('md') {
+      flex-wrap: wrap;
+      //  flex-direction: column;
+    }
   }
 
   &__item {
     flex-shrink: 0;
     padding: 15px;
+    @include media('md') {
+      //padding: 0;
+      //margin-top: 10px;
+      //&:first-child {
+      //  margin-top: 0;
+      //}
+    }
   }
 
   &__card {
     @include shadow();
     padding: 35px 25px 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    @include media('md') {
+      padding: 15px;
+    }
+
+    &:hover {
+      text-decoration: none;
+
+      #{$this}__head {
+        color: $blue;
+      }
+
+      #{$this}__link {
+        font-weight: 500;
+      }
+    }
   }
 
   &__head {
     display: flex;
     margin-bottom: 30px;
+    color: $black;
+    @include anim();
+    @include media('md') {
+      margin-bottom: 15px;
+    }
   }
 
   &__logo {
     margin-right: 30px;
+
     img {
       max-width: 150px;
       height: auto;
+      @include media('md') {
+        max-width: 95px;
+      }
     }
   }
 
@@ -39,11 +83,17 @@
     font-size: 22px;
     font-weight: 600;
     margin-bottom: 10px;
+    @include media('md') {
+      font-size: 14px;
+    }
   }
 
   &__sub {
     font-size: 18px;
     font-weight: 500;
+    @include media('md') {
+      font-size: 10px;
+    }
   }
 
   &__text {
@@ -54,9 +104,9 @@
   &__link {
     color: $blue;
     font-size: 18px;
-
-    &:hover {
-      text-decoration: underline;
+    margin-top: auto;
+    @include media('md') {
+      font-size: 12px;
     }
   }
 }

@@ -9,6 +9,9 @@
     position: relative;
     display: flex;
     align-items: center;
+    @include media('md') {
+      //min-height: 0;
+    }
 
     & #{$this}__text {
       color: $white;
@@ -31,10 +34,14 @@
     position: relative;
     display: flex;
     align-items: center;
+    @include media('md') {
+      flex-direction: column;
+    }
   }
 
   &__text {
     flex: 1;
+    max-width: 100%;
     //max-width: 770px;
 
     > *:last-child {
@@ -50,6 +57,10 @@
     width: calc(100% - 770px);
     flex-shrink: 0;
     text-align: right;
+    @include media('md') {
+      width: 100%;
+      margin-top: 30px;
+    }
   }
 
   &__form {

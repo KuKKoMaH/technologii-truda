@@ -5,3 +5,9 @@ mixin head(title)
       h1=title
       if block
         block
+      .head__socials
+        a.head__social(href='#'): +the_svg(require('src/img/facebook.sprite.svg'))
+        a.head__social(href='#'): +the_svg(require('src/img/instagram.sprite.svg'))
+        a.head__social(href='#'): +the_svg(require('src/img/whatsapp.sprite.svg'))
+        a.head__social(href='#'): +the_svg(require('src/img/youtube.sprite.svg'))
+        a.head__social(href='#'): +the_svg(require('src/img/twitter.sprite.svg'))

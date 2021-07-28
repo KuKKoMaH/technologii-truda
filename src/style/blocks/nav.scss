@@ -10,6 +10,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    @include media('md') {
+      display: none;
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0;
+      pointer-events: none;
+    }
 
     svg {
       width: 13px;
@@ -38,6 +46,35 @@
         left: 100%;
         margin-left: 30px;
       }
+    }
+  }
+
+  &__pagination {
+    display: none;
+    justify-content: center;
+    margin-top: 20px;
+    @include media('md') {
+      display: flex;
+    }
+
+    &--desktop {
+      display: flex;
+    }
+
+    .swiper-pagination-bullet {
+      padding: 20px 5px;
+
+      &:before {
+        content: '';
+        display: block;
+        width: 40px;
+        height: 2px;
+        background: $light-grey;
+        @include anim();
+      }
+    }
+    .swiper-pagination-bullet-active:before {
+      background: $blue;
     }
   }
 }

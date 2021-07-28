@@ -10,4 +10,8 @@ initSlider('.cases__container', ( $el ) => ({
   // touchEventsTarget: 'wrapper',
   slidesPerView: 1,
   spaceBetween:  0,
-}));
+}), {
+  sm: false,
+  md: false,
+  lg: true,
+});

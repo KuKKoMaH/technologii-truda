@@ -9,33 +9,44 @@
 //
 // At the bottom of this section, we provide information about the spritesheet itself
 // $spritesheet: width height image $spritesheet-sprites;
+$check-big-name: 'check_big';
+$check-big-x: 0px;
+$check-big-y: 0px;
+$check-big-offset-x: 0px;
+$check-big-offset-y: 0px;
+$check-big-width: 45px;
+$check-big-height: 47px;
+$check-big-total-width: 65px;
+$check-big-total-height: 47px;
+$check-big-image: 'src/spritesmith-generated/sprite.png';
+$check-big: (0px, 0px, 0px, 0px, 45px, 47px, 65px, 47px, 'src/spritesmith-generated/sprite.png', 'check_big', );
 $check-name: 'check';
-$check-x: 20px;
-$check-y: 0px;
-$check-offset-x: -20px;
-$check-offset-y: 0px;
+$check-x: 45px;
+$check-y: 23px;
+$check-offset-x: -45px;
+$check-offset-y: -23px;
 $check-width: 17px;
 $check-height: 13px;
-$check-total-width: 37px;
-$check-total-height: 23px;
+$check-total-width: 65px;
+$check-total-height: 47px;
 $check-image: 'src/spritesmith-generated/sprite.png';
-$check: (20px, 0px, -20px, 0px, 17px, 13px, 37px, 23px, 'src/spritesmith-generated/sprite.png', 'check', );
+$check: (45px, 23px, -45px, -23px, 17px, 13px, 65px, 47px, 'src/spritesmith-generated/sprite.png', 'check', );
 $search-name: 'search';
-$search-x: 0px;
+$search-x: 45px;
 $search-y: 0px;
-$search-offset-x: 0px;
+$search-offset-x: -45px;
 $search-offset-y: 0px;
 $search-width: 20px;
 $search-height: 23px;
-$search-total-width: 37px;
-$search-total-height: 23px;
+$search-total-width: 65px;
+$search-total-height: 47px;
 $search-image: 'src/spritesmith-generated/sprite.png';
-$search: (0px, 0px, 0px, 0px, 20px, 23px, 37px, 23px, 'src/spritesmith-generated/sprite.png', 'search', );
-$spritesheet-width: 37px;
-$spritesheet-height: 23px;
+$search: (45px, 0px, -45px, 0px, 20px, 23px, 65px, 47px, 'src/spritesmith-generated/sprite.png', 'search', );
+$spritesheet-width: 65px;
+$spritesheet-height: 47px;
 $spritesheet-image: 'src/spritesmith-generated/sprite.png';
-$spritesheet-sprites: ($check, $search, );
-$spritesheet: (37px, 23px, 'src/spritesmith-generated/sprite.png', $spritesheet-sprites, );
+$spritesheet-sprites: ($check-big, $check, $search, );
+$spritesheet: (65px, 47px, 'src/spritesmith-generated/sprite.png', $spritesheet-sprites, );
 
 // The provided mixins are intended to be used with the array-like variables
 //

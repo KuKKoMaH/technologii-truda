@@ -1,0 +1,7 @@
+.headerSearch
+  .c
+    form.headerSearch__form
+      .headerSearch__icon: +the_svg(require('src/img/search.sprite.svg'))
+      input.headerSearch__input(placeholder='Что ищете?')
+      button.headerSearch__button Найти
+      button.headerSearch__close(type='button'): +the_svg(require('src/img/close.sprite.svg'))

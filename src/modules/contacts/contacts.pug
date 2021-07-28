@@ -19,13 +19,21 @@
           +the_svg(require('src/img/download.sprite.svg'))(class="btn__icon")
           span На общественном транспорте
 
-    .contacts__block
-      .contacts__label Телефон:
-      .contacts__value: a(href='tel:#') +7 (495) 191-16-38
-      .contacts__buttons
-        button.btn.btn--sm.btn--outline
+    .contacts__row
+      .contacts__contact
+        .contacts__info
+          .contacts__label Телефон:
+          .contacts__value: a(href='tel:#') +7 (495) 191-16-38
+        button.btn.btn--sm.btn--outline.contacts__button
           +the_svg(require('src/img/phone.sprite.svg'))(class="btn__icon")
           span Заказать звонок
+      .contacts__contact
+        .contacts__info
+          .contacts__label E-mail:
+          .contacts__value: a(href='mailto:info@eactt.ru') info@eactt.ru
+        button.btn.btn--sm.btn--outline.contacts__button
+          +the_svg(require('src/img/at.sprite.svg'))(class="btn__icon")
+          span Написать
 
   .contacts__aside
     .contacts__map.map(data-lat=59.939864 data-lng=30.314565)

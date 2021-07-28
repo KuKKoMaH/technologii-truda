@@ -6,6 +6,9 @@
 
   &__top {
     padding: 60px 0;
+    @include media('md') {
+      padding: 35px 0;
+    }
 
     #{$this}__row {
       justify-content: space-between;
@@ -18,11 +21,19 @@
     #{$this}__row {
       height: 65px;
       align-items: center;
+      @include media('md') {
+        height: auto;
+        flex-direction: row;
+        padding: 15px 0;
+      }
     }
   }
 
   &__row {
     display: flex;
+    @include media('md') {
+      flex-direction: column;
+    }
   }
 
   &__col {
@@ -34,28 +45,58 @@
 
   &__logo {
     margin-bottom: 50px;
-
+    @include media('md') {
+      max-width: 100%;
+      margin-bottom: 35px;
+    }
   }
 
   &__address {
     font-size: 18px;
     margin-bottom: 30px;
     max-width: 350px;
+    @include media('md') {
+      border-top: 1px solid $grey;
+      font-size: 12px;
+      font-weight: 500;
+      max-width: 100%;
+      width: 100%;
+      padding-top: 35px;
+    }
   }
 
   &__work {
     font-size: 18px;
     max-width: 350px;
+    @include media('md') {
+      font-size: 12px;
+      max-width: 100%;
+    }
   }
 
   &__workLabel {
     font-size: 14px;
     color: $dark-grey;
+    @include media('md') {
+      font-size: 9px;
+    }
+  }
+
+  &__menuContainer {
+    display: flex;
+    @include media('md') {
+      margin: 30px 0;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+    }
   }
 
   &__menu {
     flex-shrink: 0;
     margin: 0 30px;
+    @include media('md') {
+      margin: 0;
+    }
 
     ul {
       padding: 0;
@@ -65,6 +106,7 @@
       justify-content: space-between;
       height: 100%;
     }
+
     li:before {
       display: none;
     }
@@ -77,14 +119,22 @@
       &:last-child {
         margin-bottom: 0;
       }
+
+      @include media('md') {
+        margin-bottom: 20px;
+      }
     }
 
     a {
       font-size: 18px;
       color: $white;
       @include anim();
+      @include media('md') {
+        font-size: 14px;
+      }
 
       &:hover {
+        text-decoration: none;
         color: $blue;
       }
     }
@@ -95,6 +145,11 @@
     flex-shrink: 0;
     margin: 0 30px;
     height: 100%;
+    @include media('md') {
+      margin: 0;
+      margin-right: 30px;
+      width: auto;
+    }
 
     ul {
       padding: 0;
@@ -104,6 +159,7 @@
       justify-content: space-between;
       height: 100%;
     }
+
     li:before {
       display: none;
     }
@@ -116,12 +172,20 @@
       &:last-child {
         margin-bottom: 0;
       }
+
+      @include media('md') {
+        margin-bottom: 20px;
+      }
     }
 
     a {
       font-size: 18px;
       color: $dark-grey;
+      text-decoration: none;
       @include anim();
+      @include media('md') {
+        font-size: 12px;
+      }
 
       &:hover {
         color: $blue;
@@ -134,6 +198,18 @@
     flex-direction: column;
     align-items: flex-end;
     text-align: right;
+    @include media('md') {
+      flex-direction: row;
+    }
+  }
+
+  &__asideTop {
+    display: flex;
+    flex-direction: column;
+    @include media('md') {
+      flex-direction: column-reverse;
+      text-align: left;
+    }
   }
 
   &__phone {
@@ -141,21 +217,50 @@
     font-weight: 600;
     font-size: 20px;
     margin-bottom: 15px;
+    @include anim();
+
+    &:hover {
+      text-decoration: none;
+      color: $white;
+    }
+
+    @include media('md') {
+      margin: 0;
+      font-size: 16px;
+    }
   }
 
   &__email {
     font-size: 18px;
     color: $white;
+
+    &:hover {
+      text-decoration: none;
+      color: $blue;
+    }
+
+    @include anim();
+    @include media('md') {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
   }
 
   &__contact {
     margin-top: auto;
+    @include media('md') {
+      margin-left: auto;
+    }
   }
+
   &__contactLabel {
     position: relative;
     padding-left: 30px;
     font-size: 14px;
     margin-bottom: 15px;
+    @include media('md') {
+      display: none;
+    }
 
     svg {
       position: absolute;
@@ -175,5 +280,44 @@
 
   &__socials {
     margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  &__social {
+    margin-left: 12px;
+    color: $white;
+    opacity: .25;
+    @include anim();
+
+    &:hover {
+      opacity: .75;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    svg {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__contactIcon {
+    display: none;
+    @include media('md') {
+      display: block;
+      width: 16px;
+      height: 16px;
+      transform: scaleX(-1);
+    }
+  }
+
+  &__contactText {
+    @include media('md') {
+      display: none;
+    }
   }
 }

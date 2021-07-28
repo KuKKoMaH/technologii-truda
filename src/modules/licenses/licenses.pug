@@ -2,7 +2,7 @@
   .blockHeader
     h2 ЛИЦЕНЗИИ И АККРЕДИТАЦИИ
     .blockHeader__aside
-      a.btn.btn--outline(href='#')
+      a.btn.btn--outline.blockHeader__button(href='#')
         span Смотреть все
         +the_svg(require('src/img/arrow.sprite.svg'))(class="btn__icon")
 
@@ -20,3 +20,4 @@
     .nav.nav--center
       button.nav__item.nav__item--prev: +the_svg(require('src/img/arrow.sprite.svg'))
       button.nav__item.nav__item--next: +the_svg(require('src/img/arrow.sprite.svg'))
+      .nav__pagination

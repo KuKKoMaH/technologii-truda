@@ -1,10 +1,16 @@
 .lineForm {
   display: flex;
   align-items: stretch;
+  @include media('md') {
+    flex-direction: column;
+  }
 
   &__input {
     flex: 1;
     margin-right: 20px;
+    @include media('md') {
+      margin: 0 0 10px 0;
+    }
     //height: 100%;
 
     input {
@@ -16,11 +22,23 @@
       font-size: 14px;
       padding: 10px;
       @include placeholder($white);
+      @include media('md') {
+        font-size: 12px;
+        padding: 9px;
+      }
     }
   }
 
   &__confirm {
     align-self: center;
     margin-right: 20px;
+
+    @include media('md') {
+      margin-right: 0;
+      margin-bottom: 20px;
+      br {
+        display: none;
+      }
+    }
   }
 }

@@ -2,13 +2,52 @@
   $this: &;
 
   margin: 60px 0;
+  @include media('md') {
+    margin: 50px 0;
+  }
 
   h1 {
     margin-right: 40px;
+    min-width: 0;
+    @include media('md') {
+      margin-right: 10px;
+    }
   }
 
   &__row {
     display: flex;
     align-items: center;
+    @include media('md') {
+      flex-wrap: wrap;
+
+      .btn {
+        width: auto;
+      }
+    }
+  }
+
+  &__socials {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+
+
+    @include media('md') {
+      display: none;
+    }
+  }
+
+  &__social {
+    margin-left: 12px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    svg {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
   }
 }

@@ -18,10 +18,15 @@ export default ( { $items } ) => {
       });
       inited[index] = true;
     }
-    $el.on('click', function ( e ) {
+
+    $el.off('click', $el.data('openGalleryHandler'));
+
+    const onClick = function ( e ) {
       e.preventDefault();
       openGallery(+index);
-    });
+    };
+    $el.data('openGalleryHandler', onClick);
+    $el.on('click', onClick);
   });
 
   slides = slides.sort(( a, b ) => a.index === b.index ? 0 : a.index > b.index ? 1 : -1);

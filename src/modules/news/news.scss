@@ -1,14 +1,86 @@
 .news {
+  $this: &;
+
+  position: relative;
+
+  &__menuButton {
+    display: none;
+    @include media('md') {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  &__closeButton {
+    display: none;
+    @include media('md') {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $blue;
+
+      svg {
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
 
   &__menu {
+    @include media('md') {
+      position: absolute;
+      background: $white;
+      right: 0;
+      top: 0;
+      padding: 30px 20px 10px;
+      z-index: 2;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      @include shadow();
+      @include anim();
+
+      &--active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+      }
+    }
+  }
+
+  &__links {
     display: flex;
     align-items: center;
     margin-right: 55px;
+    @include media('md') {
+      display: block;
+      margin: 0;
+    }
   }
 
   &__link {
     display: flex;
     align-items: center;
+    @include media('md') {
+      border-bottom: 1px solid $light-light-grey;
+      padding: 10px 0;
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
 
     &:after {
       content: '';
@@ -17,26 +89,80 @@
       height: 30px;
       background: $grey;
       margin: 0 30px;
+      @include media('md') {
+        display: none;
+      }
     }
 
     &:last-child:after {
       display: none;
     }
 
-    a {
+    button {
       color: $black;
+      @include anim();
+
+      &:hover {
+        color: $blue;
+      }
+    }
+
+    &--active {
+      button {
+        color: $blue;
+      }
+    }
+  }
+
+  &__bodies {
+    position: relative;
+    margin: -15px;
+    @include media('md') {
+      margin: 0;
+    }
+  }
+
+  &__body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: translateY(20px);
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+    @include anim(.2s);
+
+    &--active {
+      position: relative;
+      transform: none;
+      opacity: 1;
+      pointer-events: all;
+      visibility: visible;
+      z-index: 1;
     }
   }
 
   &__items {
     display: flex;
     flex-wrap: wrap;
-    margin: -15px;
+    @include media('md') {
+      flex-direction: column;
+    }
   }
 
   &__item {
     padding: 15px;
     width: 33.333%;
+    @include media('md') {
+      padding: 0;
+      width: 100%;
+      margin-top: 10px;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
   }
 
   &__card {
@@ -45,9 +171,38 @@
     background: $black 50% 50%;
     background-size: cover;
     color: $white;
+    @include media('md') {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
 
     &:hover {
       color: $white;
+
+      &:before {
+        background: $blue;
+      }
+
+      #{$this} {
+        &__label {
+          transform: translateY(-20px);
+          opacity: 0;
+        }
+
+        &__title {
+          transform: translateY(-20px);
+          opacity: 0;
+        }
+
+        &__overlay {
+          transform: none;
+          visibility: visible;
+          opacity: 1;
+          pointer-events: all;
+        }
+      }
     }
 
     &:before {
@@ -59,12 +214,16 @@
       left: 0;
       background: $black;
       opacity: .6;
+      @include anim();
     }
 
     &:after {
       content: '';
       display: block;
       padding-bottom: 100%;
+      @include media('md') {
+        display: none;
+      }
     }
   }
 
@@ -77,6 +236,15 @@
     border-radius: 5px;
     padding: 5px 10px;
     max-width: calc(100% - 40px);
+    @include anim();
+    @include media('md') {
+      position: relative;
+      top: 0;
+      left: 0;
+      margin-bottom: 20px;
+      font-size: 10px;
+      padding: 4px 10px;
+    }
   }
 
   &__content {
@@ -84,14 +252,57 @@
     bottom: 20px;
     left: 20px;
     right: 20px;
+    @include media('md') {
+      position: relative;
+      z-index: 1;
+      bottom: 0;
+      right: 0;
+      left: 0;
+    }
   }
 
   &__title {
     font-size: 18px;
     font-weight: 600;
+    @include anim();
+    @include media('md') {
+      font-size: 14px;
+    }
   }
 
   &__date {
     margin-top: 15px;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    transform: translateY(20px);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    @include anim();
+  }
+
+  &__overlayTitle {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    @include media('md') {
+      font-size: 14px;
+    }
+  }
+
+  &__description {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  &__more {
+    font-size: 16px;
+    font-weight: 600;
   }
 }

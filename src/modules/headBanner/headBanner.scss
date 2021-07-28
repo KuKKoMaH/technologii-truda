@@ -2,21 +2,11 @@
   position: relative;
   height: 540px;
   background: $black;
-  background-size: cover;
-  background-position: 50% 50%;
-  display: flex;
-  //align-items: center;
-  align-items: center;
+  margin-bottom: 120px;
 
-  &:before {
-    content: '';
-    position: absolute;
-    background: $black;
-    opacity: .7;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+  @include media('md') {
+    height: auto;
+    margin-bottom: 60px;
   }
 
   &__content {
@@ -24,6 +14,9 @@
     z-index: 1;
     width: 100%;
     color: $white;
+    @include media('md') {
+      padding: 45px 0;
+    }
   }
 
   &__text {
@@ -31,9 +24,101 @@
     max-width: 780px;
     margin-top: 30px;
     font-weight: 500;
+    @include media('md') {
+
+    }
+
   }
 
   &__form {
     margin-top: 30px;
+  }
+
+  &__slider {
+    height: 100% !important; // фикс выхода из адаптивности
+  }
+
+  &__slides {
+    display: flex;
+    height: 100%;
+    //@include media('md') {
+    //  align-items: flex-start;
+    //}
+  }
+
+  &__slide {
+    width: 100%;
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    //height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    @include media('md') {
+      //display: block;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      background: $black;
+      opacity: .7;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    margin-left: -575px;
+    z-index: 1;
+    @include media('md') {
+      left: 0;
+      width: 100%;
+      bottom: 0;
+      margin: 0;
+    }
+
+    .nav__pagination {
+      margin: 0;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+
+  .breadcrumbs {
+    a {
+      color: $white;
+    }
+  }
+
+  .wpcf7-response-output {
+    text-align: left;
+    color: $white;
+  }
+
+  & .wpcf7-success {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    color: $white;
+
+    &:before {
+      margin-bottom: 0;
+      margin-right: 25px;
+    }
   }
 }

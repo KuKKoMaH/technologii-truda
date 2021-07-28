@@ -1,0 +1,32 @@
+.cookieWarn {
+  $this: &;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: $light-light-grey;
+  padding: 25px 0;
+  transform: translateY(100%);
+  z-index: 1;
+  @include anim();
+
+  &--active {
+    transform: none;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+
+  &__aside {
+    margin-left: auto;
+    padding-left: 15px;
+
+  }
+
+  &__button {
+    background: $light-light-grey;
+  }
+}

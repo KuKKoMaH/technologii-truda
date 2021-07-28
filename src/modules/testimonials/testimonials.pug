@@ -2,7 +2,7 @@
   .blockHeader
     h2 ОТЗЫВЫ
     .blockHeader__aside
-      a.btn.btn--outline(href='#')
+      a.btn.btn--outline.blockHeader__button(href='#')
         span Смотреть все
         +the_svg(require('src/img/arrow.sprite.svg'))(class="btn__icon")
 
@@ -11,7 +11,7 @@
       .testimonials__items
         each i in [1,2,3,4,5,6,7]
           .testimonials__item
-            .testimonials__card
+            a.testimonials__card(href='#')
               .testimonials__head
                 .testimonials__logo
                   img(src=require('src/modules/testimonials/img/logo.png'))
@@ -19,7 +19,8 @@
                   .testimonials__header Ростелеком
                   .testimonials__sub Сфера деятельности компании
               .testimonials__text Когда человек сознательно или интуитивно выбирает себе в жизни какую-то цель, жизненную задачу, он невольно дает себе оценку.
-              a.testimonials__link(href='#') Читать отзыв >
+              .testimonials__link Читать отзыв >
     .nav.nav--center
       button.nav__item.nav__item--prev: +the_svg(require('src/img/arrow.sprite.svg'))
       button.nav__item.nav__item--next: +the_svg(require('src/img/arrow.sprite.svg'))
+      .nav__pagination

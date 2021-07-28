@@ -1,10 +1,19 @@
 mixin headBanner(withBreadcrumbs)
-  .headBanner.fullWidth(style='background-image: url(' + require('src/modules/headBanner/img/image.jpg') + ')')
-    .headBanner__content
-      .c
-        if withBreadcrumbs
-          include ../breadcrumbs/breadcrumbs
-        h1 ПРОИЗВОДСТВЕННЫЙ КОНТРОЛЬ
-        .headBanner__text Сформированные за десятилетия собственные методики и опыт позволяют нашим экспертам даже в рамках ограниченного бюджета выполнять качественные проекты.
-        .headBanner__form
-          include ../lineForm/lineForm
+  .headBanner.fullWidth
+    .headBanner__slider(data-delay=1000)
+      .headBanner__slides
+        each i in [1,2,3]
+          .headBanner__slide(style='background-image: url(' + require('src/modules/headBanner/img/image.jpg') + ')')
+            .headBanner__content
+              .c
+                if withBreadcrumbs
+                  include ../breadcrumbs/breadcrumbs
+                h1 ПРОИЗВОДСТВЕННЫЙ КОНТРОЛЬ
+                .headBanner__text
+                  each j in new Array(i)
+                    p Сформированные за десятилетия собственные методики и опыт позволяют нашим экспертам даже в рамках ограниченного бюджета выполнять качественные проекты.
+                .headBanner__form
+                  include ../lineForm/lineForm
+    .headBanner__nav
+      .nav__pagination.nav__pagination--desktop
+

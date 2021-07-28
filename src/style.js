@@ -1,11 +1,13 @@
+import "./style/banner.scss";
 import "destyle.css/destyle.css";
-import "./style/fonts.scss";
-import "./style/common.scss";
-import "./style/typography.scss";
+import "./style/blocks/wpcf7.scss";
 import "./style/blocks/btn.scss";
 import "./style/blocks/checkbox.scss";
 import "./style/blocks/nav.scss";
 import "./style/blocks/input.scss";
+import "./style/fonts.scss";
+import "./style/common.scss";
+import "./style/typography.scss";
 
 import './modules/header/header.scss';
 import './modules/photoswipe/photoswipe.scss';
@@ -45,3 +47,9 @@ import './modules/contactCard/contactCard.scss';
 import './modules/articles/articles.scss';
 import './modules/headerMenu/headerMenu.scss';
 import './modules/popup/popup.scss';
+import './modules/headerFloat/headerFloat.scss';
+import './modules/headerSearch/headerSearch.scss';
+import './modules/search/search.scss';
+import './modules/cookieWarn/cookieWarn.scss';
+import './modules/responsiveTable/responsiveTable.scss';
+import './modules/notFound/notFound.scss';

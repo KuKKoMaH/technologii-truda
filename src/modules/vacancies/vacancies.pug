@@ -1,11 +1,17 @@
 .vacancies.block
   .blockHeader
     h2 ВАКАНСИИ
-  .vacancies__headers
-    .vacancies__header.vacancies__header--active: button Продажи
-    .vacancies__header: button Маркетинг
-    .vacancies__header: button Охрана труда
-    .vacancies__header: button Административный персонал
+  .vacancies__header
+    .vacancies__menuActive Продажи
+    button.vacancies__menuButton: +the_svg(require('src/img/menu.sprite.svg'))
+
+    .vacancies__menu
+      button.vacancies__closeButton: +the_svg(require('src/img/close.sprite.svg'))
+      .vacancies__menuItems
+        .vacancies__menuItem.vacancies__menuItem--active: button Продажи
+        .vacancies__menuItem: button Маркетинг
+        .vacancies__menuItem: button Охрана труда
+        .vacancies__menuItem: button Административный персонал
   .vacancies__block
     .vacancies__bodies
       each i in [1,2,3,4]

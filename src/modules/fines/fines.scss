@@ -1,17 +1,42 @@
 .fines {
-  &__tabs {
+  $this: &;
+
+  &__items {
     margin: 40px 0;
-    display: flex;
+    position: relative;
   }
 
-  &__headers {
-    width: 40%;
-    flex-shrink: 0;
-    padding-right: 25px;
+  &__item {
+    margin-bottom: 25px;
+    @include media('md') {
+      margin-bottom: 15px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &--active {
+      #{$this}__header {
+        background: $light-light-grey;
+      }
+
+      #{$this}__body {
+        z-index: 1;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+
+        @include media('md') {
+          max-height: none;
+        }
+      }
+    }
   }
 
   &__header {
     height: 100px;
+    width: 450px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -24,42 +49,50 @@
     @include shadow();
     @include anim();
 
-    &:last-child {
+    @include media('md') {
+      height: 75px;
+      font-size: 14px;
+      width: 100%;
       margin-bottom: 0;
     }
-
-    &--active {
-      background: $light-light-grey;
-    }
-  }
-
-  &__bodies {
-    @include shadow();
-    position: relative;
-    overflow: hidden;
   }
 
   &__body {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    right: 0;
+    left: 480px;
     height: 100%;
     opacity: 0;
     z-index: -1;
     visibility: hidden;
-    padding: 25px 30px;
-    @include anim();
+    transform: translateY(20px);
+    @include anim(.2s);
 
-    &--active {
-      position: relative;
-      z-index: 1;
-      opacity: 1;
-      visibility: visible;
+    @include media('md') {
+      margin: -5px;
+      padding: 5px;
+      height: auto;
+      position: static;
+      max-height: 0;
+      overflow: hidden;
+      transform: translateY(10px);
     }
   }
 
-  &__item {
+  &__content {
+    height: 100%;
+    padding: 25px 30px;
+    @include shadow();
+    @include media('md') {
+      height: auto;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      padding: 20px;
+    }
+  }
+
+  &__listItem {
     display: flex;
     align-items: center;
     margin-bottom: 25px;
@@ -67,18 +100,33 @@
     &:last-child {
       margin-bottom: 0;
     }
+
+    @include media('md') {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   &__description {
     color: $dark-grey;
     font-size: 14px;
+    @include media('md') {
+      font-size: 12px;
+    }
   }
 
   &__price {
     color: $blue;
     font-size: 22px;
     font-weight: 600;
-    margin-left: 20px;
+    padding-left: 20px;
+    margin-left: auto;
     flex-shrink: 0;
+    @include media('md') {
+      padding: 0;
+      margin: 0;
+      font-size: 14px;
+      margin-top: 10px;
+    }
   }
 }

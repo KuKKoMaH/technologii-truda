@@ -1,13 +1,13 @@
 .pagination
   .pagination__pages
-    a.active(href='#') 1
-    a(href='#') 2
-    a(href='#') 3
-    a(href='#') 4
-    a.pagination__next(href='#'): +the_svg(require('src/img/arrow.sprite.svg'))
+    span( aria-current="page" class="page-numbers current") 1
+    a( class="page-numbers" href="#") 2
+    a( class="page-numbers" href="#") 3
+    a( class="page-numbers" href="#") 4
+    a( class="next page-numbers" href="#"): +the_svg(require('src/img/arrow.sprite.svg'))
   .pagination__more
     a.pagination__sort(href='#'): +the_svg(require('src/img/sort.sprite.svg'))
-    a.btn.btn--outline(href='#')
+    a.btn.btn--outline.pagination__loadMore(href='#')
       span Показать еще
       +the_svg(require('src/img/arrow.sprite.svg'))(class="btn__icon")
 

@@ -14,6 +14,12 @@
   border-radius: 5px;
   @include anim();
 
+  @include media('md') {
+    font-size: 14px;
+    padding: 8px 15px;
+    width: 100%;
+  }
+
   &:focus {
     outline: 0;
   }
@@ -61,6 +67,9 @@
     padding: 9px 18px;
     font-size: 14px;
     font-weight: 400;
+    @include media('md') {
+      font-size: 12px;
+    }
   }
 
   &--block {
@@ -71,6 +80,12 @@
   &__icon {
     max-width: 12px;
     max-height: 12px;
+
+    svg {
+      max-width: 12px;
+      max-height: 12px;
+      display: block;
+    }
 
     &:first-child {
       margin-right: 10px;

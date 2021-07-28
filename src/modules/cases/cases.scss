@@ -1,4 +1,4 @@
-.cases{
+.cases {
   &__slider {
     position: relative;
   }
@@ -6,43 +6,82 @@
   &__container {
     overflow: hidden;
     margin: -15px;
+    @include media('md') {
+      margin: 0;
+      overflow: visible;
+    }
   }
 
   &__items {
     display: flex;
+    @include media('md') {
+      display: block;
+    }
   }
 
   &__item {
     flex-shrink: 0;
     padding: 15px;
+    @include media('md') {
+      margin-bottom: 15px;
+      padding: 0;
+    }
   }
 
   &__card {
     @include shadow();
     padding: 35px 25px 20px;
     display: flex;
+    @include media('md') {
+      padding: 20px 15px 15px;
+      display: block;
+    }
   }
 
   &__left {
-    border-right: 1px solid #C4C4C4;
+    border-right: 1px solid $light-grey;
     padding-right: 30px;
     width: 45%;
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    @include media('md') {
+      width: 100%;
+      padding: 0;
+      border-right: 0;
+      border-bottom: 1px solid $light-grey;
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+    }
   }
 
   &__right {
     padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    @include media('md') {
+      padding: 0;
+    }
   }
 
   &__head {
     display: flex;
     margin-bottom: 30px;
+    @include media('md') {
+      margin-bottom: 20px;
+    }
   }
 
   &__logo {
     width: 160px;
     flex-shrink: 0;
     padding-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include media('md') {
+      width: 95px;
+    }
 
     img {
       max-width: 100%;
@@ -53,12 +92,19 @@
   &__header {
     font-size: 18px;
     font-weight: 600;
-    margin-bottom: 10px;
+    @include media('md') {
+      font-size: 14px;
+    }
   }
 
   &__sub {
     font-size: 14px;
+    margin-top: 10px;
     color: $dark-grey;
+    @include media('md') {
+      font-size: 9px;
+      margin-top: 5px;
+    }
   }
 
   &__text {
@@ -67,7 +113,8 @@
   }
 
   &__footer {
-    margin-top: 10px;
+    margin-top: auto;
+    padding-top: 10px;
     text-align: right;
   }
 
@@ -75,6 +122,10 @@
     color: $blue;
     font-size: 18px;
     font-weight: 600;
+    margin-top: auto;
+    @include media('md') {
+      font-size: 12px;
+    }
 
     &:hover {
       text-decoration: underline;

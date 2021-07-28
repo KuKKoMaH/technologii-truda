@@ -3,12 +3,20 @@
 
   &__row {
     display: flex;
+    @include media('md') {
+      flex-direction: column;
+    }
   }
 
   &__main {
     width: 360px;
     margin-right: 20px;
     flex-shrink: 0;
+    @include media('md') {
+      width: 50%;
+      float: left;
+      height: 300px;
+    }
   }
 
   &__items {
@@ -28,6 +36,10 @@
     flex-direction: column;
     text-align: right;
     padding-top: 20px;
+    margin-left: auto;
+    @include media('md') {
+      text-align: left;
+    }
   }
 
   &__card {
@@ -119,6 +131,17 @@
   &__top {
     font-size: 20px;
     font-weight: 600;
+    @include media('md') {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text {
+    @include media('md') {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
   }
 
   &__counter {
@@ -126,12 +149,20 @@
     font-weight: 500;
     margin: 30px 0;
     color: $blue;
+    @include media('md') {
+      font-size: 24px;
+      margin: 0;
+      margin-right: 20px;
+    }
 
-    b {
+    b, strong {
       display: block;
       font-size: 96px;
       font-weight: 600;
       line-height: .75;
+      @include media('md') {
+        font-size: 64px;
+      }
     }
   }
 
@@ -140,10 +171,12 @@
   }
 
   &__buttons {
+    padding-top: 15px;
     margin-top: auto;
 
     .btn {
       margin-bottom: 15px;
+
       &:last-child {
         margin-bottom: 0;
       }

@@ -1,9 +1,21 @@
 .history {
   $this: &;
 
+  &__content {
+    @include media('md') {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+  }
+
   &__slider {
     position: relative;
     margin-bottom: 50px;
+    @include media('md') {
+      width: 70px;
+      flex-shrink: 0;
+      margin: 0;
+    }
 
     &:before {
       content: '';
@@ -13,6 +25,9 @@
       bottom: 16px;
       left: 0;
       background: $light-grey;
+      @include media('md') {
+        display: none;
+      }
     }
   }
 
@@ -23,7 +38,9 @@
   &__items {
     position: relative;
     display: flex;
-
+    @include media('md') {
+      flex-direction: column;
+    }
   }
 
   &__item {
@@ -33,7 +50,10 @@
     cursor: pointer;
     font-size: 24px;
     font-weight: 500;
-
+    @include media('md') {
+      font-size: 16px;
+      height: 50px;
+    }
     &:after {
       content: '';
       position: absolute;
@@ -45,6 +65,9 @@
       margin-left: -16px;
       background: $light-light-grey;
       @include anim();
+      @include media('md') {
+        display: none;
+      }
     }
 
     &--active {
@@ -65,6 +88,11 @@
     margin-left: -16px;
     top: 0;
     @include anim();
+    @include media('md') {
+      left: auto;
+      margin-left: 0;
+      right: 0;
+    }
   }
 
   &__nav {
@@ -75,16 +103,18 @@
       &--prev {
         right: 100%;
       }
+
       &--next {
         left: 100%;
       }
     }
   }
 
-  &__bodies{
+  &__bodies {
     position: relative;
     overflow: hidden;
     @include shadow();
+    width: 100%;
   }
 
   &__body {
@@ -98,6 +128,9 @@
     z-index: -1;
     padding: 20px 25px;
     @include anim();
+    @include media('md') {
+      padding: 15px 10px;
+    }
 
     &--active {
       position: relative;

@@ -5,17 +5,29 @@
     font-size: 36px;
     font-weight: 700;
     color: $blue;
+    @include media('md') {
+      font-size: 18px;
+    }
   }
 
   &__items {
     margin: -15px;
     display: flex;
     flex-wrap: wrap;
+    @include media('md') {
+      margin: 0;
+      display: block;
+    }
   }
 
   &__item {
     width: 33.333%;
     padding: 15px;
+    @include media('md') {
+      width: 100%;
+      padding: 0;
+      margin-bottom: 15px;
+    }
   }
 
   &__card {
@@ -24,6 +36,9 @@
     background: $black 50% 50% no-repeat;
     background-size: cover;
     @include shadow();
+    @include media('md') {
+      height: 100px;
+    }
 
     &:before,
     &:after {
@@ -48,9 +63,11 @@
 
     &:hover {
       text-decoration: none;
+
       &:after {
         opacity: 1;
       }
+
       & #{$this} {
         &__header {
           transform: translateY(-20px);
@@ -72,14 +89,21 @@
 
   &__icon {
     position: absolute;
-    width: 32px;
-    height: 32px;
     top: 30px;
     left: 25px;
     z-index: 2;
     //color: $blue;
     color: $white;
-    @include anim();
+    @include media('md') {
+      display: none;
+    }
+
+    svg {
+      display: block;
+      width: 32px;
+      height: 32px;
+      @include anim();
+    }
   }
 
   &__header {
@@ -92,6 +116,13 @@
     font-size: 22px;
     font-weight: 600;
     @include anim();
+    @include media('md') {
+      font-size: 14px;
+      padding: 0 50px 0 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      bottom: auto;
+    }
   }
 
   &__content {
@@ -107,6 +138,9 @@
     align-items: flex-start;
     transform: translateY(20px);
     @include anim();
+    @include media('md') {
+      display: none;
+    }
   }
 
   &__head {
@@ -122,4 +156,26 @@
     margin-bottom: auto;
   }
 
+  &__mobileIcon {
+    display: none;
+    @include media('md') {
+      position: absolute;
+      background: rgba($white, .3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      right: 20px;
+      top: 50%;
+      margin-top: -11px;
+
+      svg {
+        width: 8px;
+        height: 8px;
+        color: $white;
+      }
+    }
+  }
 }

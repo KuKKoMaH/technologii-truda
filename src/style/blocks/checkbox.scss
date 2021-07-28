@@ -1,8 +1,10 @@
 .wpcf7-checkbox .wpcf7-list-item, .checkbox {
   position: relative;
-  display: inline-block;
+  display: flex;
+  align-items: center;
   cursor: pointer;
   padding-left: 35px;
+  min-height: 20px;
 
   input {
     display: none

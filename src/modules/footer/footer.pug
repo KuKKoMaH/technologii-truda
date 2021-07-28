@@ -9,28 +9,32 @@ footer.footer
             .footer__workLabel График работы
             | Пн-пт с 9.00 до 18.00
 
-        .footer__menu
-          ul
-            li: a(href='#') О КОМПАНИИ
-            li: a(href='#') УСЛУГИ
-            li: a(href='#') ПРЕСС-ЦЕНТР
-            li: a(href='#') РЕКВИЗИТЫ
-
-        .footer__col
-          .footer__submenu
+        .footer__menuContainer
+          .footer__menu
             ul
-              li: a(href='#') Пользовательское соглашение
-              li: a(href='#') Политика о конфиденциальности
-              li: a(href='#') Условия использования cookie
+              li: a(href='#') О КОМПАНИИ
+              li: a(href='#') УСЛУГИ
+              li: a(href='#') ПРЕСС-ЦЕНТР
+              li: a(href='#') РЕКВИЗИТЫ
+
+          .footer__col
+            .footer__submenu
+              ul
+                li: a(href='#') Пользовательское соглашение
+                li: a(href='#') Политика о конфиденциальности
+                li: a(href='#') Условия использования cookie
 
         .footer__aside
-          a.footer__phone(href='tel:') +7 (495) 191-08-97
-          a.footer__email(href='mailto:') info@eactt.ru
+          .footer__asideTop
+            a.footer__phone(href='tel:') +7 (495) 191-08-97
+            a.footer__email(href='mailto:') info@eactt.ru
           .footer__contact
             .footer__contactLabel
               +the_svg(require('src/img/arrow.sprite.svg'))
               | Позвоните нам или#[br]оставьте заявку
-            button.btn.btn--sm.btn--orange Оставить заявку
+            button.btn.btn--sm.btn--orange
+              +the_svg(require('src/img/phone.sprite.svg'))(class="footer__contactIcon")
+              .footer__contactText Оставить заявку
 
 
   .footer__bottom
@@ -38,4 +42,8 @@ footer.footer
       .footer__row
         .footer__copyright 2005-2021 ООО “ЭАЦ “Технологии труда””. Все права защищены
         .footer__socials
-          img(src=require('src/modules/footer/img/socials.png'))
+          a.footer__social(href='#'): +the_svg(require('src/img/facebook.sprite.svg'))
+          a.footer__social(href='#'): +the_svg(require('src/img/instagram.sprite.svg'))
+          a.footer__social(href='#'): +the_svg(require('src/img/whatsapp.sprite.svg'))
+          a.footer__social(href='#'): +the_svg(require('src/img/youtube.sprite.svg'))
+          a.footer__social(href='#'): +the_svg(require('src/img/twitter.sprite.svg'))

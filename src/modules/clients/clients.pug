@@ -2,16 +2,24 @@
   .clients__row
     .clients__left
       h2 НАМ ДОВЕРЯЮТ
-      .clients__bullet
-        .clients__number 500+
-        | клиентов
-      .clients__text Когда человек сознательно или интуитивно выбирает себе в жизни какую-то цель, жизненную задачу, он невольно дает себе
-    .clients__slider
-      .clients__container
-        .clients__items
-          each i in [1,2,3,4,5,6,7]
-            .clients__item
-              img(src=require('src/modules/clients/img/logo.png'))
+      .clients__content
+        .clients__bullet
+          .clients__number 500+
+          | клиентов
+        .clients__text Когда человек сознательно или интуитивно выбирает себе в жизни какую-то цель, жизненную задачу, он невольно дает себе
+      .clients__btn
+        button.btn.btn--outline()
+          span Оставить отзыв
+          +the_svg(require('src/img/arrow.sprite.svg'))(class="btn__icon")
+    .clients__aside
+      .clients__slider
+        .clients__container
+          .clients__items
+            each i in [1,2,3,4,5,6,7]
+              .clients__item
+                img(src=require('src/modules/clients/img/logo.png'))
+                =i
       .nav.nav--center
         button.nav__item.nav__item--prev: +the_svg(require('src/img/arrow.sprite.svg'))
         button.nav__item.nav__item--next: +the_svg(require('src/img/arrow.sprite.svg'))
+        .nav__pagination

@@ -1,20 +1,29 @@
 .news.block
-  .blockHeader
+  .blockHeader.blockHeader--mobileWithoutButton
     h2 НОВОСТИ
     .blockHeader__aside
+      button.news__menuButton: +the_svg(require('src/img/menu.sprite.svg'))
       .news__menu
-        .news__link: a(href='#') Охрана труда
-        .news__link: a(href='#') Экология
-        .news__link: a(href='#') Корпоративные
-      a.btn.btn--outline(href='#')
+        button.news__closeButton: +the_svg(require('src/img/close.sprite.svg'))
+        .news__links
+          .news__link.news__link--active: button Охрана труда
+          .news__link: button Экология
+          .news__link: button Корпоративные
+      a.btn.btn--outline.blockHeader__button(href='#')
         span Смотреть все
         +the_svg(require('src/img/arrow.sprite.svg'))(class="btn__icon")
-
-  .news__items
+  .news__bodies
     each i in [1,2,3]
-      .news__item
-        a.news__card(style='background-image: url(' + require('src/modules/news/img/img.jpg') + ')' href='#')
-          .news__label Новости охраны труда
-          .news__content
-            .news__title В Оренбурге запустили пилотный проект по внедрению СУПР
-            .news__date 25.02.2021
+      .news__body(class=i === 1 && 'news__body--active')
+        .news__items
+          each i in [1,2,3]
+            .news__item
+              a.news__card(style='background-image: url(' + require('src/modules/news/img/img.jpg') + ')' href='#')
+                .news__label Новости охраны труда
+                .news__content
+                  .news__title В Оренбурге запустили пилотный проект по внедрению СУПР
+                  .news__date 25.02.2021
+                .news__overlay
+                  .news__overlayTitle В Оренбурге запустили пилотный проект по внедрению СУПР
+                  .news__description Когда человек сознательно или интуитивно выбирает себе в жизни какую-то цель, жизненную задачу, он невольно дает себе оценку.
+                  .news__more Подробнее >

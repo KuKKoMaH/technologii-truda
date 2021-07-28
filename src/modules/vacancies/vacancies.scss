@@ -1,12 +1,44 @@
 .vacancies {
   $this: &;
 
-  &__headers {
+  &__header {
     display: flex;
     margin-bottom: 35px;
+    position: relative;
+    align-items: center;
   }
 
-  &__header {
+  &__menu {
+    display: flex;
+    @include media('md') {
+      position: absolute;
+      background: $white;
+      @include shadow();
+      display: block;
+      right: 0;
+      top: 0;
+      margin: 0;
+      padding: 30px 20px 10px;
+      flex-direction: column;
+      z-index: 1;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      @include anim();
+
+      &--active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+      }
+    }
+  }
+
+  &__menuItems {
+    display: flex;
+  }
+
+  &__menuItem {
     font-size: 18px;
     display: flex;
     align-items: center;
@@ -38,16 +70,89 @@
         color: $blue;
       }
     }
+
+    @include media('md') {
+      display: block;
+      border-bottom: 1px solid $light-light-grey;
+      padding: 10px 0;
+      background-color: transparent;
+      margin: 0;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+
+      &:after {
+        display: none;
+      }
+
+      button {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__menuActive {
+    display: none;
+    @include media('md') {
+      display: block;
+      color: $blue;
+    }
+  }
+
+  &__menuButton {
+    display: none;
+    @include media('md') {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  &__closeButton {
+    display: none;
+    @include media('md') {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $blue;
+
+      svg {
+        width: 14px;
+        height: 14px;
+      }
+    }
   }
 
   &__block {
     display: flex;
+    @include media('md') {
+      flex-direction: column;
+    }
   }
 
   &__aside {
     width: 360px;
     flex-shrink: 0;
     margin-left: 35px;
+    @include media('md') {
+      width: 100%;
+      margin-left: 0;
+      margin-top: 20px;
+    }
   }
 
   &__bodies {
@@ -79,6 +184,10 @@
     @include shadow();
     margin-bottom: 30px;
     padding: 25px;
+    @include media('md') {
+      padding: 15px;
+      margin-bottom: 15px;
+    }
 
     &--full {
       & #{$this}__description {
@@ -93,24 +202,34 @@
     font-size: 22px;
     font-weight: 600;
     color: $blue;
-    margin-bottom: 30px;
+    @include media('md') {
+      font-size: 16px;
+    }
   }
 
   &__salary {
     font-size: 18px;
     font-weight: 500;
-    margin-bottom: 10px;
+    margin-top: 15px;
+    @include media('md') {
+      font-size: 13px;
+      margin-top: 10px;
+    }
   }
 
   &__description {
     overflow: hidden;
     max-height: 1.25em * 5;
+    margin-top: 30px;
     @supports (-webkit-line-clamp: 5) {
       max-height: none;
       text-overflow: ellipsis;
       display: -webkit-box;
       -webkit-line-clamp: 5; /* number of lines to show */
       -webkit-box-orient: vertical;
+    }
+    @include media('md') {
+      margin-top: 15px;
     }
     //max-height: 1.25em * 5;
     //overflow: hidden;
@@ -122,6 +241,7 @@
 
   &__more {
     margin-top: 10px;
+    text-align: right;
   }
 
 

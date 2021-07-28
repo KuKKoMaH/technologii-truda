@@ -1,0 +1,79 @@
+.headerSearch {
+  $this: &;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: $white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+  z-index: $header_zIndex_search;
+  transform: translateY(-100%);
+  @include anim();
+
+  &--active {
+    transform: translateY(0);
+  }
+
+  @include media('md') {
+    display: none;
+  }
+
+  &__form {
+    display: block;
+    position: relative;
+  }
+
+  &__input {
+    font-size: 14px;
+    font-weight: 400;
+    display: block;
+    width: 100%;
+    padding-left: 45px;
+    height: $header-top-height - 1px; // border
+  }
+
+  &__icon {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $blue;
+    pointer-events: none;
+
+    svg {
+      width: 16px;
+      height: 16px;
+      display: block;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    right: -11px;
+    top: 0;
+    color: $blue;
+    width: $header-top-height - 1px;
+    height: $header-top-height - 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 14px;
+      height: 14px;
+      display: block;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    right: 40px;
+    padding: 0 10px;
+    top: 0;
+    color: $blue;
+    height: $header-top-height - 1px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+}

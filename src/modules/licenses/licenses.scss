@@ -17,6 +17,10 @@
   &__container {
     overflow: hidden;
     margin: -15px;
+    @include media('md') {
+      margin-left: -5px;
+      margin-right: -5px;
+    }
   }
 
   &__items {
@@ -27,6 +31,10 @@
     flex-shrink: 0;
     padding: 10px;
     width: 20%;
+    @include media('md') {
+      padding: 5px;
+      width: 50%;
+    }
   }
 
   &__doc {
@@ -37,11 +45,15 @@
     background: 50% 50% no-repeat;
     background-size: cover;
     cursor: pointer;
+    @include media('md') {
+      height: 215px;
+    }
 
     &:hover {
       & #{$this}__button {
         opacity: 1;
       }
+
       & #{$this}__content {
         opacity: 0;
       }
@@ -63,11 +75,25 @@
     justify-content: center;
     opacity: 0;
     @include anim();
+    @include media('md') {
+      opacity: 1;
+      width: 23px;
+      height: 23px;
+      top: 10px;
+      right: 10px;
+      left: auto;
+      margin: 0;
+      z-index: 1;
+    }
 
     svg {
       width: 24px;
       height: 24px;
       color: $white;
+      @include media('md') {
+        width: 11px;
+        height: 11px;
+      }
     }
   }
 
@@ -84,15 +110,24 @@
     padding: 15px;
     color: $white;
     @include anim();
+    @include media('md') {
+      text-align: center;
+    }
   }
 
   &__header {
     font-weight: 600;
     margin-bottom: 5px;
+    @include media('md') {
+      font-size: 14px;
+    }
   }
 
   &__text {
     font-size: 12px;
+    @include media('md') {
+      font-size: 10px;
+    }
   }
 
   &__list {

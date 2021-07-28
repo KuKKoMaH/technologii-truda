@@ -13,20 +13,18 @@ html
     //link(rel="shortcut icon" href="/favicon.ico")
 
   body(onunload="")
+    include ../modules/headerSearch/headerSearch
     include ../modules/header/header
+    include ../modules/headerFloat/headerFloat
+    include ../modules/headerMenu/headerMenu
     block body
     include ../modules/footer/footer
 
     include ../modules/photoswipe/photoswipe
     include ../modules/popup/popup-callback
+    button.toTop: +the_svg(require('src/img/arrow.sprite.svg'))
+    include ../modules/cookieWarn/cookieWarn
     .hidden
-      //include ../modules/popup/popup-thank
-      //include ../modules/popup/popup-akcii
-    //  include ../modules/popup/popup-partnership
-    //  include ../modules/popup/popup-abandon1
-    //  include ../modules/popup/popup-abandon2
-    //  include ../modules/popup/popup-abandon3
-    //  include ../modules/popup/popup-testPopup
-    //  include ../modules/popup/popup-casePopup
+
     script.
       (function ( w, dE ) {function u() {dE.style.setProperty('--scrollbar-width', w.innerWidth - dE.clientWidth + "px");}w.addEventListener('resize', u);u()})(window, document.documentElement)

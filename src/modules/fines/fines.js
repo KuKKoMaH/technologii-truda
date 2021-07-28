@@ -1,21 +1,18 @@
-const activeHeaderClass = 'fines__header--active';
-const activeTabClass = 'fines__body--active';
+const activeItemClass = 'fines__item--active';
 
-$('.fines').each((i, el) => {
-    const $el = $(el);
-    const $headers = $el.find('.fines__header');
-    const $bodies = $el.find('.fines__body');
+$('.fines').each(( i, el ) => {
+  const $el = $(el);
+  const $headers = $el.find('.fines__header');
+  const $items = $el.find('.fines__item');
 
-    function activate(index) {
-        $headers.removeClass(activeHeaderClass);
-        $bodies.removeClass(activeTabClass);
-        $headers.eq(index).addClass(activeHeaderClass);
-        $bodies.eq(index).addClass(activeTabClass);
-    }
+  function activate( index ) {
+    $items.removeClass(activeItemClass);
+    $items.eq(index).addClass(activeItemClass);
+  }
 
-    $headers.on('click', function () {
-        const $el = $(this);
-        activate($el.index());
-    });
+  $headers.on('click', function () {
+    const $el = $(this).parents('.fines__item');
+    activate($el.index());
+  });
 
-})
+});

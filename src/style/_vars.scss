@@ -11,6 +11,7 @@ $light-grey: #C4C4C4;
 $grey: #AFAFAF;
 $dark-grey: #717476;
 $dark-dark-grey: #454545;
+$red: #FF0000;
 
 // ====================================
 // grid settings
@@ -29,3 +30,10 @@ $container-lg: 1170px;
 
 $header-top-height: 41px;
 $header-bottom-height: 65px;
+$header-mobile-height: 75px;
+
+$header_zIndex_background: 11;
+$header_zIndex_bottom: 12;
+$header_zIndex_menu: 13;
+$header_zIndex_top: 14;
+$header_zIndex_search: 15;

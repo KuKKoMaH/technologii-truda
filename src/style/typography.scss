@@ -1,19 +1,29 @@
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   letter-spacing: 0;
   font-weight: 700;
+  text-transform: uppercase;
   //color: $black;
 }
 
 h1, .h1 {
   font-size: 48px;
+  @include media('md') {
+    font-size: 26px;
+  }
 }
 
 h2, .h2 {
   font-size: 40px;
+  @include media('md') {
+    font-size: 26px;
+  }
 }
 
 h3, .h3 {
   font-size: 34px;
+  @include media('md') {
+    font-size: 20px;
+  }
 }
 
 h4, .h4, h5, .h5, h6, .h6 {
@@ -23,14 +33,25 @@ h4, .h4, h5, .h5, h6, .h6 {
 
 h4, .h4 {
   font-size: 22px;
+  @include media('md') {
+    font-size: 18px;
+  }
+
 }
 
 h5, .h5 {
   font-size: 18px;
+  @include media('md') {
+    font-size: 14px;
+  }
+
 }
 
 h6, .h6 {
   font-size: 16px;
+  @include media('md') {
+    font-size: 12px;
+  }
 }
 
 b, strong {
@@ -107,7 +128,12 @@ blockquote {
 }
 
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
+//table {
+//  width: 100%;
+//  border-collapse: collapse;
+//
+//  td {
+//    border: 1px solid $light-light-grey;
+//    padding: .25em;
+//  }
+//}

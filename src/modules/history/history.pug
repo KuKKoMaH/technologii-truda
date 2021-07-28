@@ -1,23 +1,24 @@
 .history.block
   .blockHeader
     h2 ИСТОРИЯ КОМПАНИИ
-  .history__slider
-    .history__container
-      .history__items
-          each i in [2015, 2016, 2017, 2018, 2019, 2020]
-            .history__item(class=(i === 2020 ? 'history__item--active' : ''))
-              .history__year=i
+  .history__content
+    .history__slider
+      .history__container
+        .history__items
+            each i in [2015, 2016, 2017, 2018, 2019, 2020]
+              .history__item(class=(i === 2020 ? 'history__item--active' : ''))
+                .history__year=i
 
-    .nav.history__nav
-      button.nav__item.nav__item--prev: +the_svg(require('src/img/arrow.sprite.svg'))
-      button.nav__item.nav__item--next: +the_svg(require('src/img/arrow.sprite.svg'))
+      .nav.history__nav
+        button.nav__item.nav__item--prev: +the_svg(require('src/img/arrow.sprite.svg'))
+        button.nav__item.nav__item--next: +the_svg(require('src/img/arrow.sprite.svg'))
 
-  .history__bodies
-      each i in [2015, 2016, 2017, 2018, 2019, 2020]
-        .history__body.content(class=(i === 2020 ? 'history__body--active' : ''))
-          h4=i
-          ul
-            li ЭАЦ "Технологии труда" работает на рынке охраны труда с 2006 года. За это время мы накопили большой опыт в реализации проектов различной сложности.
-            li Главный ориентир - потребности клиентов. Исходя из поставленных задач, наши эксперты разрабатывают план работ по повышению эффективности охраны труда.
-            li ЭАЦ "Технологии труда" работает на рынке охраны труда с 2006 года. За это время мы накопили большой опыт в реализации проектов различной сложности.
-            li Главный ориентир - потребности клиентов. Исходя из поставленных задач, наши эксперты разрабатывают план работ по повышению эффективности охраны труда.
+    .history__bodies
+        each i in [2015, 2016, 2017, 2018, 2019, 2020]
+          .history__body.content(class=(i === 2020 ? 'history__body--active' : ''))
+            h4=i
+            ul
+              li ЭАЦ "Технологии труда" работает на рынке охраны труда с 2006 года. За это время мы накопили большой опыт в реализации проектов различной сложности.
+              li Главный ориентир - потребности клиентов. Исходя из поставленных задач, наши эксперты разрабатывают план работ по повышению эффективности охраны труда.
+              li ЭАЦ "Технологии труда" работает на рынке охраны труда с 2006 года. За это время мы накопили большой опыт в реализации проектов различной сложности.
+              li Главный ориентир - потребности клиентов. Исходя из поставленных задач, наши эксперты разрабатывают план работ по повышению эффективности охраны труда.

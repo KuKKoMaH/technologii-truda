@@ -1,0 +1,40 @@
+.block
+  .responsiveTable
+    .responsiveTable__desktop
+      table
+        thead
+          tr
+            th Заголовок-1
+            th Заголовок-2
+            th Заголовок-3
+            th Заголовок-4
+        tbody
+          each i in [1,2,3,4,5]
+            tr
+              td
+                | Заголовок
+                =i
+              td
+                | Текст 1
+                =i
+              td
+                | Текст 1
+                =i
+              td
+                | Текст 1
+                =i
+
+    .responsiveTable__mobile
+      each i in [1,2,3]
+        .responsiveTable__item
+          .responsiveTable__head
+            | Заголовок
+            +the_svg(require('src/img/arrow.sprite.svg'))(class="responsiveTable__arrow")
+          .responsiveTable__body
+            .responsiveTable__inner
+              table
+                tbody
+                  each j in [1,2,3]
+                    tr
+                      td Заголовок:
+                      td текст

@@ -1,4 +1,13 @@
 .header__placeholder
+
+header.header__mobile
+  button.header__mobileButton.header__mobileCall
+    +the_svg(require('src/img/phone.sprite.svg'))
+  img.header__mobileLogo(src=require('src/img/logo.png'))
+  button.header__mobileButton.header__mobileHamburger
+    +the_svg(require('src/img/menu.sprite.svg'))(class='header__hamburgerIcon')
+    +the_svg(require('src/img/close.sprite.svg'))(class='header__closeIcon')
+
 header.header
   .header__top
     .c
@@ -13,7 +22,9 @@ header.header
           | Пн-пт с 9.00 до 18.00
           .header__sep
           | Работаем по всей России
-        a.header__phone(href='tel:') +7 (495) 191-08-97
+        a.header__phone(href='tel:')
+          +the_svg(require('src/img/phone.sprite.svg'))
+          |+7 (495) 191-08-97
         button.header__search
   .header__bottom
     .c
@@ -30,6 +41,4 @@ header.header
         .header__contacts
           button.btn.btn--sm.btn--orange(data-micromodal-trigger="callback-popup") Оставить заявку
         button.header__hamburger
-          +the_svg(require('src/modules/header/img/menu.sprite.svg'))(class='header__hamburgerIcon')
-  .header__fullMenu
-    include ../headerMenu/headerMenu
+          +the_svg(require('src/img/menu.sprite.svg'))(class='header__hamburgerIcon')

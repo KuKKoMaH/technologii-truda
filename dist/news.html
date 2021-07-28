@@ -7,9 +7,42 @@
     <meta id="viewport" name="viewport" content="width=device-width, user-scalable=no">
     <!--link(rel="stylesheet" media="all" href="style.css")-->
     <!--link(rel="shortcut icon" href="/favicon.ico")-->
-  <link href="style.css?1620046763665" rel="stylesheet"></head>
+  <link href="style.css?1627417097748" rel="stylesheet"></head>
   <body onunload="">
+    <div class="headerSearch">
+      <div class="c">
+        <form class="headerSearch__form">
+          <div class="headerSearch__icon">
+            <svg>
+              <use xlink:href="img/sprite.svg#search-usage"></use>
+            </svg>
+          </div>
+          <input class="headerSearch__input" placeholder="Что ищете?">
+          <button class="headerSearch__button">Найти</button>
+          <button class="headerSearch__close" type="button">
+            <svg>
+              <use xlink:href="img/sprite.svg#close-usage"></use>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
     <div class="header__placeholder"></div>
+    <header class="header__mobile">
+      <button class="header__mobileButton header__mobileCall">
+        <svg>
+          <use xlink:href="img/sprite.svg#phone-usage"></use>
+        </svg>
+      </button><img class="header__mobileLogo" src="img/img_logo.png">
+      <button class="header__mobileButton header__mobileHamburger">
+        <svg class="header__hamburgerIcon">
+          <use xlink:href="img/sprite.svg#menu-usage"></use>
+        </svg>
+        <svg class="header__closeIcon">
+          <use xlink:href="img/sprite.svg#close-usage"></use>
+        </svg>
+      </button>
+    </header>
     <header class="header">
       <div class="header__top">
         <div class="c">
@@ -24,7 +57,10 @@
             </div>
             <div class="header__works">Пн-пт с 9.00 до 18.00
               <div class="header__sep"></div>Работаем по всей России
-            </div><a class="header__phone" href="tel:">+7 (495) 191-08-97</a>
+            </div><a class="header__phone" href="tel:">
+              <svg>
+                <use xlink:href="img/sprite.svg#phone-usage"></use>
+              </svg>+7 (495) 191-08-97</a>
             <button class="header__search"></button>
           </div>
         </div>
@@ -52,94 +88,152 @@
           </div>
         </div>
       </div>
-      <div class="header__fullMenu">
-        <div class="headerMenu">
-          <div class="c headerMenu__content">
-            <button class="headerMenu__close">
-              <svg>
-                <use xlink:href="img/sprite.svg#close-usage"></use>
-              </svg>
-            </button>
-            <div class="headerMenu__left">
-              <div class="headerMenu__main">
-                <div class="headerMenu__menu">
-                  <ul>
-                    <li><a href="#">О нас</a>
-                      <ul>
-                        <li><a href="#">О компании</a></li>
-                        <li><a href="#">Отзывы</a></li>
-                        <li><a href="#">Лицензии и аккредитации</a></li>
-                        <li><a href="#">Руководство</a></li>
-                        <li><a href="#">Партнеры</a></li>
-                        <li><a href="#">Реквизиты</a></li>
-                        <li><a href="#">Вакансии</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-                <div class="headerMenu__socials">
-                  <div class="headerMenu__header">Пресс-центр</div>
-                </div>
-                <div class="headerMenu__contacts">
-                  <p>105082, Москва, Переведеновский пер., д. 13, стр. 18</p>
-                  <p>Пн-пт с <b>9.00 до 18.00</b></p>
-                </div>
+    </header>
+    <div class="headerFloat">
+      <div class="c headerFloat__content">
+        <div class="headerFloat__logo"><img src="img/img_logo_sm.png"></div>
+        <div class="headerFloat__menu">
+          <ul>
+            <li><a href="#">О компании</a></li>
+            <li><a href="#">Услуги</a></li>
+            <li><a href="#">Мероприятия</a></li>
+            <li><a href="#">Пресс-центр</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+        </div>
+        <div class="headerFloat__phone"><a href="#">+7 (495) 191-08-97</a></div>
+        <button class="headerFloat__contact">
+          <svg>
+            <use xlink:href="img/sprite.svg#phone-usage"></use>
+          </svg>
+        </button>
+        <button class="headerFloat__hamburger">
+          <svg>
+            <use xlink:href="img/sprite.svg#menu-usage"></use>
+          </svg>
+        </button>
+        <button class="headerFloat__search">
+          <svg>
+            <use xlink:href="img/sprite.svg#search-usage"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="headerMenu">
+      <div class="headerMenu__container">
+        <div class="c headerMenu__content">
+          <button class="headerMenu__close">
+            <svg>
+              <use xlink:href="img/sprite.svg#close-usage"></use>
+            </svg>
+          </button>
+          <div class="headerMenu__left">
+            <div class="headerMenu__main">
+              <div class="headerMenu__menu">
+                <ul>
+                  <li><a href="#">О нас</a>
+                    <ul>
+                      <li><a href="#">О компании</a></li>
+                      <li><a href="#">Отзывы</a></li>
+                      <li><a href="#">Лицензии и аккредитации</a></li>
+                      <li><a href="#">Руководство</a></li>
+                      <li><a href="#">Партнеры</a></li>
+                      <li><a href="#">Реквизиты</a></li>
+                      <li><a href="#">Вакансии</a></li>
+                    </ul>
+                  </li>
+                </ul>
               </div>
-              <div class="headerMenu__footer">
-                <div class="headerMenu__footerLink"><a href="mailto:#">info@eactt.ru</a></div>
-                <div class="headerMenu__footerLink"><a href="tel:#">+7 (495) 191-08-97</a></div>
+              <div class="headerMenu__socials">
+                <div class="headerMenu__header">Пресс-центр</div>
+              </div>
+              <div class="headerMenu__contacts">
+                <p>105082, Москва, Переведеновский пер., д. 13, стр. 18</p>
+                <p>Пн-пт с <b>9.00 до 18.00</b></p>
               </div>
             </div>
-            <div class="headerMenu__right">
-              <div class="headerMenu__submenu">
-                <ul>
-                  <li><a href="#">Охрана труда</a>
-                    <ul>
-                      <li><a href="#">Специальная оценка условий труда</a></li>
-                      <li><a href="#">Производственный контроль</a></li>
-                      <li><a href="#">Система управления охраной труда</a></li>
-                      <li><a href="#">Оценка профессиональных рисков</a></li>
-                      <li><a href="#">Выполнение функции службы охраны труда Выполнение функции службы охраны труда</a></li>
-                      <li><a href="#">Пакет документов по охране труда</a></li>
-                      <li><a href="#">Расследование несчастных случаев</a></li>
-                      <li><a href="#">Сопровождение проверок охраны труда</a></li>
-                      <li><a href="#">Услуги испытательной лаборатории</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Учебный центр</a>
-                    <ul>
-                      <li><a href="#">Сведения об обучающей организации</a></li>
-                      <li><a href="#">Предаттестационная подготовка</a></li>
-                      <li><a href="#">Обучение по рабочим профессиям</a></li>
-                      <li><a href="#">Повышение квалификации</a></li>
-                      <li><a href="#">Профессиональная переподготовка</a></li>
-                      <li><a href="#">Краткосрочное обучение</a></li>
-                      <li><a href="#">Семинары и вебинары</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-              <div class="headerMenu__meta">
-                <ul>
-                  <li><a href="#">Пользовательское соглашение</a></li>
-                  <li><a href="#">Политика о конфиденциальности</a></li>
-                  <li><a href="#">Условия использования cookie</a></li>
-                </ul>
-              </div>
+            <div class="headerMenu__footer">
+              <div class="headerMenu__footerLink"><a href="mailto:#">info@eactt.ru</a></div>
+              <div class="headerMenu__footerLink"><a href="tel:#">+7 (495) 191-08-97</a></div>
+            </div>
+          </div>
+          <div class="headerMenu__right">
+            <div class="headerMenu__submenu">
+              <ul>
+                <li><a href="#">Охрана труда</a>
+                  <ul>
+                    <li><a href="#">Специальная оценка условий труда</a></li>
+                    <li><a href="#">Производственный контроль</a></li>
+                    <li><a href="#">Система управления охраной труда</a></li>
+                    <li><a href="#">Оценка профессиональных рисков</a></li>
+                    <li><a href="#">Выполнение функции службы охраны труда Выполнение функции службы охраны труда</a></li>
+                    <li><a href="#">Пакет документов по охране труда</a></li>
+                    <li><a href="#">Расследование несчастных случаев</a></li>
+                    <li><a href="#">Сопровождение проверок охраны труда</a></li>
+                    <li><a href="#">Услуги испытательной лаборатории</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Учебный центр</a>
+                  <ul>
+                    <li><a href="#">Сведения об обучающей организации</a></li>
+                    <li><a href="#">Предаттестационная подготовка</a></li>
+                    <li><a href="#">Обучение по рабочим профессиям</a></li>
+                    <li><a href="#">Повышение квалификации</a></li>
+                    <li><a href="#">Профессиональная переподготовка</a></li>
+                    <li><a href="#">Краткосрочное обучение</a></li>
+                    <li><a href="#">Семинары и вебинары</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="headerMenu__meta">
+              <ul>
+                <li><a href="#">Пользовательское соглашение</a></li>
+                <li><a href="#">Политика о конфиденциальности</a></li>
+                <li><a href="#">Условия использования cookie</a></li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
-    </header>
+    </div>
     <div class="c">
       <div class="head">
-        <div class="breadcrumbs"><span>Главная - Услуги</span></div>
+        <div class="breadcrumbs"><span><span><a href="http://tt.cm08072.tmweb.ru/">Главная</a> » <span class="breadcrumb_last">Лицензии</span></span></span></div>
         <div class="head__row">
           <h1>НОВОСТИ</h1>
+          <div class="head__socials"><a class="head__social" href="#">
+              <svg>
+                <use xlink:href="img/sprite.svg#facebook-usage"></use>
+              </svg></a><a class="head__social" href="#">
+              <svg>
+                <use xlink:href="img/sprite.svg#instagram-usage"></use>
+              </svg></a><a class="head__social" href="#">
+              <svg>
+                <use xlink:href="img/sprite.svg#whatsapp-usage"></use>
+              </svg></a><a class="head__social" href="#">
+              <svg>
+                <use xlink:href="img/sprite.svg#youtube-usage"></use>
+              </svg></a><a class="head__social" href="#">
+              <svg>
+                <use xlink:href="img/sprite.svg#twitter-usage"></use>
+              </svg></a></div>
         </div>
       </div>
       <div class="submenu">
-        <div class="submenu__items"><a class="submenu__item" href="#">О компании</a><a class="submenu__item" href="#">Лицензии и аккредитации</a><a class="submenu__item" href="#">Руководство</a><a class="submenu__item" href="#">Партнеры</a><a class="submenu__item" href="#">Отзывы</a><a class="submenu__item" href="#">Карьера</a><a class="submenu__item" href="#">Реквизиты</a></div>
+        <div class="submenu__active">О компании</div>
+        <button class="submenu__menuButton">
+          <svg>
+            <use xlink:href="img/sprite.svg#menu-usage"></use>
+          </svg>
+        </button>
+        <div class="submenu__items">
+          <button class="submenu__closeButton">
+            <svg>
+              <use xlink:href="img/sprite.svg#close-usage"></use>
+            </svg>
+          </button><a class="submenu__item" href="#">О компании</a><a class="submenu__item" href="#">Лицензии и аккредитации</a><a class="submenu__item" href="#">Руководство</a><a class="submenu__item" href="#">Партнеры</a><a class="submenu__item" href="#">Отзывы</a><a class="submenu__item" href="#">Карьера</a><a class="submenu__item" href="#">Реквизиты</a>
+        </div>
       </div>
       <div class="news block">
         <div class="news__items">
@@ -175,14 +269,14 @@
               </div></a></div>
         </div>
         <div class="pagination">
-          <div class="pagination__pages"><a class="active" href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a class="pagination__next" href="#">
+          <div class="pagination__pages"><span class="page-numbers current" aria-current="page">1</span><a class="page-numbers" href="#">2</a><a class="page-numbers" href="#">3</a><a class="page-numbers" href="#">4</a><a class="next page-numbers" href="#">
               <svg>
                 <use xlink:href="img/sprite.svg#arrow-usage"></use>
               </svg></a></div>
           <div class="pagination__more"><a class="pagination__sort" href="#">
               <svg>
                 <use xlink:href="img/sprite.svg#sort-usage"></use>
-              </svg></a><a class="btn btn--outline" href="#"><span>Показать еще</span>
+              </svg></a><a class="btn btn--outline pagination__loadMore" href="#"><span>Показать еще</span>
               <svg class="btn__icon">
                 <use xlink:href="img/sprite.svg#arrow-usage"></use>
               </svg></a></div>
@@ -202,13 +296,13 @@
             <div class="subscribe__input">
               <input placeholder="E-mail">
             </div>
-            <div class="subscribe__input">
+            <div class="subscribe__checkbox">
               <label class="checkbox">
-                <input type="checkbox"><span>Согласен(а) наобработку моих<br><a href="#">персональных данных</a></span>
+                <input type="checkbox"><span>Согласен(а) на обработку моих <br><a href="#">персональных данных</a></span>
               </label>
             </div>
             <div class="subscribe__button">
-              <button class="btn btn--block">Оставить заявку</button>
+              <button class="btn btn--block">Подписаться</button>
             </div>
           </div>
         </div>
@@ -224,31 +318,39 @@
                 <div class="footer__workLabel">График работы</div>Пн-пт с 9.00 до 18.00
               </div>
             </div>
-            <div class="footer__menu">
-              <ul>
-                <li><a href="#">О КОМПАНИИ</a></li>
-                <li><a href="#">УСЛУГИ</a></li>
-                <li><a href="#">ПРЕСС-ЦЕНТР</a></li>
-                <li><a href="#">РЕКВИЗИТЫ</a></li>
-              </ul>
-            </div>
-            <div class="footer__col">
-              <div class="footer__submenu">
+            <div class="footer__menuContainer">
+              <div class="footer__menu">
                 <ul>
-                  <li><a href="#">Пользовательское соглашение</a></li>
-                  <li><a href="#">Политика о конфиденциальности</a></li>
-                  <li><a href="#">Условия использования cookie</a></li>
+                  <li><a href="#">О КОМПАНИИ</a></li>
+                  <li><a href="#">УСЛУГИ</a></li>
+                  <li><a href="#">ПРЕСС-ЦЕНТР</a></li>
+                  <li><a href="#">РЕКВИЗИТЫ</a></li>
                 </ul>
               </div>
+              <div class="footer__col">
+                <div class="footer__submenu">
+                  <ul>
+                    <li><a href="#">Пользовательское соглашение</a></li>
+                    <li><a href="#">Политика о конфиденциальности</a></li>
+                    <li><a href="#">Условия использования cookie</a></li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div class="footer__aside"><a class="footer__phone" href="tel:">+7 (495) 191-08-97</a><a class="footer__email" href="mailto:">info@eactt.ru</a>
+            <div class="footer__aside">
+              <div class="footer__asideTop"><a class="footer__phone" href="tel:">+7 (495) 191-08-97</a><a class="footer__email" href="mailto:">info@eactt.ru</a></div>
               <div class="footer__contact">
                 <div class="footer__contactLabel">
                   <svg>
                     <use xlink:href="img/sprite.svg#arrow-usage"></use>
                   </svg>Позвоните нам или<br>оставьте заявку
                 </div>
-                <button class="btn btn--sm btn--orange">Оставить заявку</button>
+                <button class="btn btn--sm btn--orange">
+                  <svg class="footer__contactIcon">
+                    <use xlink:href="img/sprite.svg#phone-usage"></use>
+                  </svg>
+                  <div class="footer__contactText">Оставить заявку</div>
+                </button>
               </div>
             </div>
           </div>
@@ -258,7 +360,22 @@
         <div class="c">
           <div class="footer__row">
             <div class="footer__copyright">2005-2021 ООО “ЭАЦ “Технологии труда””. Все права защищены</div>
-            <div class="footer__socials"><img src="img/modules_footer_img_socials.png"></div>
+            <div class="footer__socials"><a class="footer__social" href="#">
+                <svg>
+                  <use xlink:href="img/sprite.svg#facebook-usage"></use>
+                </svg></a><a class="footer__social" href="#">
+                <svg>
+                  <use xlink:href="img/sprite.svg#instagram-usage"></use>
+                </svg></a><a class="footer__social" href="#">
+                <svg>
+                  <use xlink:href="img/sprite.svg#whatsapp-usage"></use>
+                </svg></a><a class="footer__social" href="#">
+                <svg>
+                  <use xlink:href="img/sprite.svg#youtube-usage"></use>
+                </svg></a><a class="footer__social" href="#">
+                <svg>
+                  <use xlink:href="img/sprite.svg#twitter-usage"></use>
+                </svg></a></div>
           </div>
         </div>
       </div>
@@ -320,7 +437,11 @@
     <div class="popup micromodal-slide" id="callback-popup" aria-hidden="true">
       <div class="popup__overlay" tabindex="-1" data-micromodal-close>
         <div class="popup__container" role="dialog" aria-modal="true">
-          <!--button.modal__close(data-micromodal-close): +the_svg('close')-->
+          <button class="popup__close" data-micromodal-close>
+            <svg>
+              <use xlink:href="img/sprite.svg#close-usage"></use>
+            </svg>
+          </button>
           <!--.popup__iframe-->
           <!--iframe(allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)-->
           <div class="popup__image" style="background-image: url(img/modules_popup_img_img.jpg)"></div>
@@ -345,20 +466,30 @@
               </label>
             </div>
             <button class="btn">Оставить заявку</button>
+            <div class="popup__success"><span>
+                Спасибо!<br/>
+                Ваша заявка отправлена.<br/>
+                Скоро с Вами свяжется специалист.</span></div>
           </div>
         </div>
       </div>
     </div>
-    <div class="hidden">
-      <!--include ../modules/popup/popup-thank-->
-      <!--include ../modules/popup/popup-akcii-->
+    <button class="toTop">
+      <svg>
+        <use xlink:href="img/sprite.svg#arrow-usage"></use>
+      </svg>
+    </button>
+    <div class="cookieWarn">
+      <div class="c">
+        <div class="cookieWarn__content">
+          <div class="cookieWarn__info"><b>Мы используем файлы cookie</b><br>Пользуясь настоящим веб-сайтом, Вы даете свое согласие на использование файлов cookies.<br><a href="#">Узнать подробнее ></a></div>
+          <div class="cookieWarn__aside">
+            <button class="btn btn--outline cookieWarn__button">Ок</button>
+          </div>
+        </div>
+      </div>
     </div>
-    <!--  include ../modules/popup/popup-partnership-->
-    <!--  include ../modules/popup/popup-abandon1-->
-    <!--  include ../modules/popup/popup-abandon2-->
-    <!--  include ../modules/popup/popup-abandon3-->
-    <!--  include ../modules/popup/popup-testPopup-->
-    <!--  include ../modules/popup/popup-casePopup-->
+    <div class="hidden"></div>
     <script>(function ( w, dE ) {function u() {dE.style.setProperty('--scrollbar-width', w.innerWidth - dE.clientWidth + "px");}w.addEventListener('resize', u);u()})(window, document.documentElement)</script>
   <script defer src="app.js"></script></body>
 </html>

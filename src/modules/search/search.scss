@@ -1,0 +1,80 @@
+.search {
+  $this: &;
+
+  &__form {
+    position: relative;
+    display: block;
+    margin-bottom: 90px;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    line-height: 3;
+    font-weight: 400;
+    border-bottom: 1px solid #AFAFAF;
+  }
+
+  &__button {
+    position: absolute;
+    right: 0px;
+    top: 0;
+    color: $blue;
+    height: 100%;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  &__content {
+    display: flex;
+  }
+
+  &__left {
+    width: 850px;
+    flex-shrink: 0;
+  }
+
+  &__right {
+    flex: 1;
+  }
+
+  &__total {
+    text-align: right;
+    font-size: 12px;
+    font-weight: 400;
+    color: $dark-grey;
+  }
+
+  &__item {
+    display: block;
+    margin-bottom: 60px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      text-decoration: none;
+
+      #{$this}__title {
+        color: $blue;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 500;
+    color: $black;
+    margin-bottom: 10px;
+    @include anim();
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: 400;
+    color: $dark-grey;
+    margin-bottom: 10px;
+  }
+}

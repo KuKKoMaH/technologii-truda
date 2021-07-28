@@ -1,12 +1,24 @@
-.about{
+.about {
+  @include media('md') {
+    position: relative;
+  }
+
   &__row {
     display: flex;
+
+    @include media('md') {
+      flex-direction: column;
+    }
   }
 
   &__left {
     width: 360px;
     display: flex;
     flex-direction: column;
+    @include media('md') {
+      width: 100%;
+      margin-bottom: 20px;
+    }
 
     p {
       color: $dark-grey;
@@ -16,17 +28,27 @@
   &__right {
     flex: 1;
     margin-left: 30px;
+    @include media('md') {
+      margin: 0;
+    }
   }
 
   &__items {
     display: flex;
     flex-wrap: wrap;
     margin: -12px;
+    @include media('md') {
+      margin: -10px;
+    }
   }
 
   &__item {
     width: 33.3%;
     padding: 12px;
+    @include media('md') {
+      width: 50%;
+      padding: 10px;
+    }
   }
 
   &__card {
@@ -37,6 +59,17 @@
     @include shadow();
     display: flex;
     align-items: center;
+
+    @include media('md') {
+      height: auto;
+
+      &:after {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+      }
+    }
+
     &:before {
       content: '';
       position: absolute;
@@ -53,15 +86,37 @@
     position: relative;
     color: $white;
     padding: 20px;
+    @include media('md') {
+      font-size: 14px;
+      padding: 10px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 
   &__title {
     font-size: 40px;
+    font-weight: 500;
     margin-bottom: -5px;
+    @include media('md') {
+      font-size: 24px;
+    }
   }
 
   &__button {
     margin-top: auto;
     padding-top: 30px;
+    @include media('md') {
+      position: absolute;
+      margin-top: 0;
+      padding-top: 0;
+      right: 0;
+      top: 0;
+
+      //.btn {
+      //  font-size: 0;
+      //}
+    }
   }
 }

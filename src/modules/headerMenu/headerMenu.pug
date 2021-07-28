@@ -1,58 +1,59 @@
 .headerMenu
-  .c.headerMenu__content
-    button.headerMenu__close: +the_svg(require('src/img/close.sprite.svg'))
-    .headerMenu__left
-      .headerMenu__main
-        .headerMenu__menu
+  .headerMenu__container
+    .c.headerMenu__content
+      button.headerMenu__close: +the_svg(require('src/img/close.sprite.svg'))
+      .headerMenu__left
+        .headerMenu__main
+          .headerMenu__menu
+            ul
+              li
+                a(href='#') О нас
+                ul
+                  li: a(href='#') О компании
+                  li: a(href='#') Отзывы
+                  li: a(href='#') Лицензии и аккредитации
+                  li: a(href='#') Руководство
+                  li: a(href='#') Партнеры
+                  li: a(href='#') Реквизиты
+                  li: a(href='#') Вакансии
+          .headerMenu__socials
+            .headerMenu__header Пресс-центр
+          .headerMenu__contacts
+            p 105082, Москва, Переведеновский пер., д. 13, стр. 18
+            p Пн-пт с #[b 9.00 до 18.00]
+
+        .headerMenu__footer
+          .headerMenu__footerLink: a(href='mailto:#') info@eactt.ru
+          .headerMenu__footerLink: a(href='tel:#') +7 (495) 191-08-97
+
+      .headerMenu__right
+        .headerMenu__submenu
           ul
             li
-              a(href='#') О нас
+              a(href='#') Охрана труда
               ul
-                li: a(href='#') О компании
-                li: a(href='#') Отзывы
-                li: a(href='#') Лицензии и аккредитации
-                li: a(href='#') Руководство
-                li: a(href='#') Партнеры
-                li: a(href='#') Реквизиты
-                li: a(href='#') Вакансии
-        .headerMenu__socials
-          .headerMenu__header Пресс-центр
-        .headerMenu__contacts
-          p 105082, Москва, Переведеновский пер., д. 13, стр. 18
-          p Пн-пт с #[b 9.00 до 18.00]
+                li: a(href='#') Специальная оценка условий труда
+                li: a(href='#') Производственный контроль
+                li: a(href='#') Система управления охраной труда
+                li: a(href='#') Оценка профессиональных рисков
+                li: a(href='#') Выполнение функции службы охраны труда Выполнение функции службы охраны труда
+                li: a(href='#') Пакет документов по охране труда
+                li: a(href='#') Расследование несчастных случаев
+                li: a(href='#') Сопровождение проверок охраны труда
+                li: a(href='#') Услуги испытательной лаборатории
+            li
+              a(href='#') Учебный центр
+              ul
+                li: a(href='#') Сведения об обучающей организации
+                li: a(href='#') Предаттестационная подготовка
+                li: a(href='#') Обучение по рабочим профессиям
+                li: a(href='#') Повышение квалификации
+                li: a(href='#') Профессиональная переподготовка
+                li: a(href='#') Краткосрочное обучение
+                li: a(href='#') Семинары и вебинары
 
-      .headerMenu__footer
-        .headerMenu__footerLink: a(href='mailto:#') info@eactt.ru
-        .headerMenu__footerLink: a(href='tel:#') +7 (495) 191-08-97
-
-    .headerMenu__right
-      .headerMenu__submenu
-        ul
-          li
-            a(href='#') Охрана труда
-            ul
-              li: a(href='#') Специальная оценка условий труда
-              li: a(href='#') Производственный контроль
-              li: a(href='#') Система управления охраной труда
-              li: a(href='#') Оценка профессиональных рисков
-              li: a(href='#') Выполнение функции службы охраны труда Выполнение функции службы охраны труда
-              li: a(href='#') Пакет документов по охране труда
-              li: a(href='#') Расследование несчастных случаев
-              li: a(href='#') Сопровождение проверок охраны труда
-              li: a(href='#') Услуги испытательной лаборатории
-          li
-            a(href='#') Учебный центр
-            ul
-              li: a(href='#') Сведения об обучающей организации
-              li: a(href='#') Предаттестационная подготовка
-              li: a(href='#') Обучение по рабочим профессиям
-              li: a(href='#') Повышение квалификации
-              li: a(href='#') Профессиональная переподготовка
-              li: a(href='#') Краткосрочное обучение
-              li: a(href='#') Семинары и вебинары
-
-      .headerMenu__meta
-        ul
-          li: a(href='#') Пользовательское соглашение
-          li: a(href='#') Политика о конфиденциальности
-          li: a(href='#') Условия использования cookie
+        .headerMenu__meta
+          ul
+            li: a(href='#') Пользовательское соглашение
+            li: a(href='#') Политика о конфиденциальности
+            li: a(href='#') Условия использования cookie

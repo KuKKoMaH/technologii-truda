@@ -5,6 +5,10 @@ html {
   line-height: 1.25;
   background: #fff;
   overflow-x: hidden;
+  overflow-wrap: break-word;
+  @include media('md') {
+    font-size: 12px;
+  }
 }
 
 @media print {
@@ -40,6 +44,10 @@ html, body {
   padding-right: 15px;
   @include media('lg') {
     max-width: $container-md;
+  }
+  @include media('md') {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
@@ -79,18 +87,61 @@ img[data-srcset] {
 .block {
   margin-top: 120px;
   margin-bottom: 120px;
-
+  @include media('md') {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
 }
 
+//.textBlock {
+//  margin-top: 60px;
+//  margin-bottom: 60px;
+//  @include media('md') {
+//    margin-top: 30px;
+//    margin-bottom: 30px;
+//  }
+//}
+
 .blockHeader {
+  $this: &;
   display: flex;
   margin-bottom: 45px;
   align-items: center;
+  @include media('md') {
+    margin-bottom: 30px;
+  }
+
+  &--mobileWithoutButton {
+    @include media('md') {
+      #{$this}__button {
+        display: none;
+      }
+    }
+  }
+
 
   &__aside {
     display: flex;
     align-items: center;
     margin-left: auto;
+  }
+
+  &__button {
+    @include media('md') {
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      span {
+        display: none;
+      }
+
+      svg:last-child {
+        margin: 0;
+      }
+    }
   }
 }
 
@@ -100,6 +151,14 @@ img[data-srcset] {
 
   & > * {
     margin: 0 15px;
+  }
+
+  @include media('md') {
+    flex-direction: column;
+    margin: 0;
+    & > * {
+      margin: 15px 0;
+    }
   }
 }
 
@@ -113,7 +172,7 @@ img[data-srcset] {
 
 .fullWidth {
   width: 100vw;
-  width: calc(100vw - var(--scrollbar-width));
+  width: calc(100vw - var(--scrollbar-width, 0px));
   left: 50%;
   transform: translateX(-50%);
 
@@ -143,5 +202,34 @@ img[data-srcset] {
     h1, h2, h3, .h1, .h2, .h3 {
       color: $white;
     }
+  }
+}
+
+.toTop {
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  margin-left: 640px;
+  width: 47px;
+  height: 47px;
+  border-radius: 50%;
+  background: $light-light-grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include media('md') {
+    left: auto;
+    margin-left: auto;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+    transform: rotate(-90deg);
+    color: $blue;
+    margin-top: -3px;
   }
 }

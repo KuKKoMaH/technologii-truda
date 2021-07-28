@@ -1,24 +1,32 @@
 import 'jquery';
-import Breakpoints from 'breakpoints-js';
-import initGallery from "src/js/initGallery";
+// import 'jquery.maskedinput/src/jquery.maskedinput';
+import './breakpoints';
 import './initMap';
 import './initPopups';
+import initGallery from "src/js/initGallery";
 
-Breakpoints({
-  sm: {
-    min: 0,
-    max: 797,
-  },
-  md: {
-    min: 798,
-    max: 1169,
-  },
-  lg: {
-    min: 1170,
-    max: Infinity,
-  },
-});
+const initGalleries = () => {
+  $('.gallery').each(( i, el ) => {
+    initGallery({ $items: $(el).find('.gallery__item') });
+  });
+};
+initGalleries();
+window.INIT_GALLERIES = initGalleries;
 
-$('.gallery').each(( i, el ) => {
-  initGallery({ $items: $(el).find('.gallery__item') });
+const $share = $('.share');
+if ($share.length) {
+  scriptLoader('https://yastatic.net/share2/share.js', () => {
+    Ya.share2('share', {
+      theme: {
+        bare: true,
+      },
+    });
+  });
+}
+
+// $('input[type="tel"]').mask("+7 (999) 999-99-99");
+
+$('.toTop').on('click', () => {
+  $("html, body").animate({ scrollTop: 0 }, "slow");
+
 });

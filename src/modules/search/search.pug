@@ -1,0 +1,18 @@
+.search.block
+  form.search__form
+    input.search__input(placeholder='Что ищете?')
+    button.search__button Найти
+
+  .search__content
+    .search__left
+      .search__items
+        each i in [1,2,3,4,5]
+          a.search__item(href='#')
+            .search__title За работодателем закреплена обязанность обеспечивать сотрудников средствами индивидуальной защиты
+            .search__text В ведомстве сообщают, что пригодные для эксплуатации СИЗ можно применять по по назначению после проведения мероприятий по уходу – стирка, чистка, дезинфекция, дегазация, дезактивация, обеспыливание, обезвреживание и ремонт.
+            .search__link https://srg-eco.ru/wp-login.php?redirect_to=https%3A%2F%2Fsrg-eco.ru%2Fwp-admin%2F&reauth=1
+
+      include ../pagination/pagination
+    .search__right
+      .search__total Найдено 2 тыс. ответов
+

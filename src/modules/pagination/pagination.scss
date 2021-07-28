@@ -12,39 +12,71 @@
   }
 
   &__pages {
-    a {
+    .page-numbers {
       font-size: 18px;
       margin-right: 10px;
       color: $black;
+      @include media('md') {
+        font-size: 13px;
+        margin-right: 5px;
+      }
 
       &:hover {
         text-decoration: none;
         color: $blue;
       }
+    }
 
-      &.active {
-        font-weight: 600;
+    .current {
+      font-weight: 600;
+      color: $blue;
+    }
+    .next {
+      svg {
+        width: 12px;
+        height: 12px;
+        color: $blue;
+      }
+    }
+    .prev {
+      svg {
+        transform: rotate(180deg);
+        width: 12px;
+        height: 12px;
         color: $blue;
       }
     }
   }
 
-  &__next {
-    svg {
-      width: 12px;
-      height: 12px;
-      color: $blue;
-    }
-  }
 
   &__sort {
     margin-right: 15px;
+    @include media('md') {
+      width: 48px;
+      height: 48px;
+      margin-right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
 
     svg {
       display: block;
       width: 28px;
       height: 28px;
       color: $blue;
+      @include media('md') {
+        width: 21px;
+        height: 21px;
+      }
+    }
+  }
+
+  &__loadMore {
+    flex-shrink: 0;
+    @include media('md') {
+      width: auto;
     }
   }
 }

@@ -1,7 +1,7 @@
 #callback-popup.popup.micromodal-slide(aria-hidden="true")
   .popup__overlay(tabindex="-1" data-micromodal-close)
     .popup__container(role="dialog" aria-modal="true")
-      //button.modal__close(data-micromodal-close): +the_svg('close')
+      button.popup__close(data-micromodal-close): +the_svg(require('src/img/close.sprite.svg'))
       //.popup__iframe
       //iframe(allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
       .popup__image(style='background-image: url(' + require('src/modules/popup/img/img.jpg') + ')')
@@ -23,3 +23,9 @@
             span Согласен(а) на обработку моих #[a(href='#') персональных данных]
 
         button.btn Оставить заявку
+
+        .popup__success
+          span.
+            Спасибо!<br/>
+            Ваша заявка отправлена.<br/>
+            Скоро с Вами свяжется специалист.

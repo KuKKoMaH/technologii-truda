@@ -1,0 +1,32 @@
+.notFound
+  .c
+    .notFound__content
+      .notFound__aside
+        a.notFound__logo(href='#'): img(src=require('src/img/logo.png'))
+        button.notFound__hamburger
+          +the_svg(require('src/img/menu.sprite.svg'))
+        .notFound__asideContent
+          .notFound__menu
+            ul
+              li: a(href='#') О компании
+              li: a(href='#') Услуги
+              li: a(href='#') Мероприятия
+              li: a(href='#') Пресс-центр
+              li: a(href='#') Контакты
+          .notFound__front
+            a.btn.btn--outline Перейти на главную
+      .notFound__main
+        .notFound__info
+          .notFound__center
+            .notFound__title 404
+            .notFound__subtitle К сожалению, этой страницы#[br]не существует!
+            .notFound__text Нам очень жаль, что Вы не смогли найти то, что искали. Напишите нам на почту #[a(href='#') info@eactt.ru], и мы обязательно поможем вам!
+          .notFound__right
+            img.notFound__img(src=require('src/img/notFound.png'))
+
+        .notFound__search
+          .notFound__searchIcon: +the_svg(require('src/img/search.sprite.svg'))
+          input.notFound__searchInput(placeholder='Введите свой запрос')
+          button.notFound__searchButton Найти
+
+

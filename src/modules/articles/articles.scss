@@ -5,11 +5,23 @@
     display: flex;
     flex-wrap: wrap;
     margin: -15px;
+    @include media('md') {
+      margin: 0;
+      display: block;
+    }
   }
 
   &__item {
     padding: 15px;
     width: 50%;
+    @include media('md') {
+      width: 100%;
+      padding: 0;
+      margin-top: 15px;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
   }
 
   &__card {
@@ -17,17 +29,28 @@
     display: flex;
     flex-direction: column;
     @include shadow();
+    @include media('md') {
+      padding: 15px;
+    }
   }
 
   &__head {
     display: flex;
     align-items: center;
     margin-bottom: 35px;
+    @include media('md') {
+      margin-bottom: 15px;
+    }
   }
 
   &__tags {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    margin: -5px;
+    @include media('md')  {
+      margin: -3px;
+    }
   }
 
   &__tag {
@@ -37,10 +60,19 @@
     background: $light-light-grey;
     border-radius: 5px;
     padding: 8px 20px;
+    margin: 5px;
+    @include media('md') {
+      font-size: 10px;
+      padding: 5px 10px;
+      margin: 3px;
+    }
   }
 
   &__copy {
     margin-left: auto;
+    @include media('md') {
+      display: none;
+    }
 
     svg {
       width: 20px;
@@ -53,10 +85,17 @@
     color: $blue;
     font-weight: 600;
     margin-bottom: 30px;
+    @include media('md') {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
   }
 
   &__text {
     font-size: 14px;
+    @include media('md') {
+      font-size: 10px;
+    }
   }
 
   &__footer {
@@ -68,6 +107,9 @@
   &__date {
     font-size: 14px;
     color: $grey;
+    @include media('md') {
+      font-size: 10px;
+    }
   }
 
   &__more {
